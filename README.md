@@ -25,9 +25,14 @@ To provide a minimum viable product, Pixel Pals will need to offer, at the very 
 
 ### Wireframes
 
-https://wireframe.cc/duSWCe
-https://wireframe.cc/Ca03bR
-https://wireframe.cc/HIXdb2
+_Inventory_
+![Inventory](wireframes/Inventory.png)
+_Shop_
+![Shop](wireframes/Shop.png)
+_Gallery_
+![Gallery](wireframes/Gallery.png)
+_Profile_
+![Profile](wireframes/Profile.png)
 
 ### Components
 
@@ -62,7 +67,7 @@ src
 
 ### ERD Model
 
-https://drive.google.com/file/d/1-1jOxXJ-5K5ieR7yZfKC1JCqbmELv-aO/view?usp=sharing
+![ERD](wireframes/PixelPals.png)
 
 ### Data Hierarchy
 
