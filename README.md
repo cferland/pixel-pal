@@ -1,5 +1,7 @@
 # Pixel Pals
 
+![Avatar](wireframes/sample1.png)
+
 ## Overview
 Pixel Pals is a web application inspired by the "virtual pet" and avatar-based social networks popularized in the early 2000s, the most well-known examples being Neopets and Gaia Online. Pixel Pals' immediate functionality will be much simpler than these complex websites, but its aim will be to capture the essence of these sites and provide users with a means of expressing themselves through a customizable avatar. Upon creating an account, users will be provided with a "pixel pal" which serves as their virtual pet/avatar on the site. Users can acquire different outfits and hairstyles for their pixel pal to better suit their own aesthetic, and then share their pixel pal with other users. 
 
@@ -20,11 +22,12 @@ Pixel Pals is a web application inspired by the "virtual pet" and avatar-based s
 - Lots of assets will be required, time to produce custom-made images
 - No readily available reference for most functionality
 
+![Avatar](wireframes/sample2.png)
+
 ## MVP
 To provide a minimum viable product, Pixel Pals will need to offer, at the very least, user accounts with customizable avatars which can be shared on the site. This will rely on a front-end client built in React, as well as a back-end server utilizing Ruby on Rails and a JSON RESTful API.
 
 ### Wireframes
-
 _Inventory_
 ![Inventory](wireframes/Inventory.png)
 _Shop_
@@ -89,6 +92,8 @@ pixelpals_db
 |     Axios        | _Access data in React from the back-end._  |
 |  Ruby on Rails   | _Building back-end database/API._          |
 |  Bcrypt/JWT      | _Password encryption and user auth._       |
+
+![Avatar](wireframes/sample3.png)
 
 ## Post-MVP
 Future goals for this project are to incorporate more interactivity for the user. The project could expand into a fully-realized virtual pet simulator or incorporate other game-like elements to provide users with a sense of progression and purpose. There are a large number of possibilities for expansion of this project, but a select few priorities are listed below.
