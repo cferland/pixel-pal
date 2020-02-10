@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :username
       t.string :email
       t.string :password_digest
+      t.string :comments
       t.string :inventory
       t.string :currency
       t.references :avatar, null: false, foreign_key: true
