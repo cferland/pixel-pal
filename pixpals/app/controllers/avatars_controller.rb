@@ -7,7 +7,7 @@ class AvatarsController < ApplicationController
   end
 
   def create
-    @avatar = Avatar.create!(item_params)
+    @avatar = current_user.avatar.create!(avatar_params)
     json_response(@avatar, :created)
   end
 
