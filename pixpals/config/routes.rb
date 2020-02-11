@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :items
+
   post 'auth/login', to: 'authentication#authenticate'
   post 'signup', to: 'users#create'
 end

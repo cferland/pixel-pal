@@ -28,7 +28,8 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.permit(:content)
+    params.permit(:content, :created_by)
+        .with_defaults(created_by: current_user.username)
   end
 
   def set_avatar

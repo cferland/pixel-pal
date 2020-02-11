@@ -2,12 +2,12 @@ class AvatarsController < ApplicationController
   before_action :set_avatar, only: [:show, :update]
 
   def index
-    @avatars = Avatar.all
-    json_response(@avatars)
+    @avatar = current_user.avatar
+    json_response(@avatar)
   end
 
   def create
-    @avatar = current_user.avatar.create!(avatar_params)
+    @avatar = Avatar.create!(avatar_params)
     json_response(@avatar, :created)
   end
 
@@ -23,7 +23,8 @@ class AvatarsController < ApplicationController
   private
 
   def avatar_params
-    params.permit(:base, :hair, :outfit, :user)
+    params.permit(:base, :hair, :outfit, :user_id)
+        .with_defaults(user_id: current_user.id)
   end
 
   def set_avatar

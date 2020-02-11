@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_180126) do
+ActiveRecord::Schema.define(version: 2020_02_11_154208) do
 
   create_table "avatars", force: :cascade do |t|
     t.string "base"
@@ -52,16 +52,13 @@ ActiveRecord::Schema.define(version: 2020_02_10_180126) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
-    t.integer "avatar_id", null: false
     t.integer "currency"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["avatar_id"], name: "index_users_on_avatar_id"
   end
 
   add_foreign_key "avatars", "users"
   add_foreign_key "comments", "avatars"
   add_foreign_key "inventories", "items"
   add_foreign_key "inventories", "users"
-  add_foreign_key "users", "avatars"
 end

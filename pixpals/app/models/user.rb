@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
 
-  belongs_to :avatar
+  has_one :avatar, foreign_key: :user_id
   has_many :comments, foreign_key: :created_by
   has_many :inventories
   has_many :items, through: :inventories
