@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { registerUser, loginUser, verifyUser } from './services/api_helper';
+import { registerUser, loginUser, verifyUser, postAvatar, loadAvatar } from './services/api_helper';
 import { Route, Link, withRouter } from 'react-router-dom';
 
 import './App.css';
@@ -17,6 +17,7 @@ class App extends Component {
       email: "",
       password: "",
       currentUser: null,
+      currentAvatar: null,
       errorText: ""
     }
   }
@@ -24,8 +25,10 @@ class App extends Component {
   handleRegister = async (e, registerData) => {
     e.preventDefault();
     const currentUser = await registerUser(registerData);
+    const currentAvatar = await postAvatar({ base: "/images/bases/base_light.png" });
     if (!currentUser.errorMessage) {
-      this.setState({ currentUser });
+      this.setState({ currentUser, currentAvatar });
+      console.log(this.state.currentAvatar.base)
     } else {
       this.setState({ errorText: currentUser.errorMessage })
     }
@@ -34,7 +37,10 @@ class App extends Component {
   handleLogin = async (e, loginData) => {
     e.preventDefault();
     const currentUser = await loginUser(loginData);
-    this.setState({ currentUser });
+    console.log(currentUser)
+    const currentAvatar = await loadAvatar(currentUser.id);
+    this.setState({ currentUser, currentAvatar });
+    console.log(this.state.currentAvatar.base)
   }
 
   handleLogout = () => {
@@ -44,6 +50,7 @@ class App extends Component {
     localStorage.removeItem('authToken');
     localStorage.removeItem('username');
     localStorage.removeItem('email');
+    localStorage.removeItem('avatar');
   }
 
   componentDidMount() {
@@ -52,8 +59,11 @@ class App extends Component {
       const username = localStorage.getItem('username');
       const email = localStorage.getItem('email');
       const user = { username, email };
+      const avatar = localStorage.getItem('avatar');
+      console.log(localStorage);
       user && this.setState({
-        currentUser: user
+        currentUser: user,
+        currentAvatar: avatar
       })
     }
   }
@@ -63,6 +73,7 @@ class App extends Component {
       <div className="App">
         { this.state.currentUser ?
           <div>
+            <img src={this.state.currentAvatar} alt="avatar" />
             <h1>Hello, {this.state.currentUser.username}</h1>
             <button onClick={this.handleLogout}>Logout</button>
           </div>

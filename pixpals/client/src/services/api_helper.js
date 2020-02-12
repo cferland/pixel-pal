@@ -44,6 +44,13 @@ export const indexAvatars = async () => {
 
 export const postAvatar = async (postData) => {
   const resp = await api.post('/avatars', postData);
+  localStorage.setItem('avatar', resp.data.base)
+  return resp.data;
+}
+
+export const loadAvatar = async (id) => {
+  const resp = await api.get(`/avatars/${id}`);
+  localStorage.setItem('avatar', resp.data.base)
   return resp.data;
 }
 
