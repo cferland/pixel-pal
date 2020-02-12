@@ -44,18 +44,22 @@ export const indexAvatars = async () => {
 
 export const postAvatar = async (postData) => {
   const resp = await api.post('/avatars', postData);
-  localStorage.setItem('avatar', resp.data.base)
+  localStorage.setItem('avatar_base', resp.data.base);
+  localStorage.setItem('avatar_hair', resp.data.hair);
+  localStorage.setItem('avatar_outfit', resp.data.outfit);
   return resp.data;
 }
 
 export const loadAvatar = async (id) => {
   const resp = await api.get(`/avatars/${id}`);
-  localStorage.setItem('avatar', resp.data.base)
+  localStorage.setItem('avatar_base', resp.data.base);
+  localStorage.setItem('avatar_hair', resp.data.hair);
+  localStorage.setItem('avatar_outfit', resp.data.outfit);
   return resp.data;
 }
 
 export const putAvatar = async (id, postData) => {
   const resp = await api.put(`/avatars/${id}`, postData);
-  const avatar = {id: id, base: resp.data.data.base, hairstyle: resp.data.data.hairstyle, outfit: resp.data.data.outfit}
+  const avatar = {id: id, base: resp.data.data.base, hair: resp.data.data.hairstyle, outfit: resp.data.data.outfit}
   return avatar;
 }

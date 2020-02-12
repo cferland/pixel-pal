@@ -1,3 +1,30 @@
 .App {
   
 }
+
+.avatar {
+  width: 30%;
+  height: 0;
+  padding-bottom: 30%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.avatar-base {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.avatar-hair {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.avatar-outfit {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+}

@@ -6,6 +6,7 @@ import './App.css';
 
 import Register from './components/Register';
 import Login from './components/Login';
+import Avatar from './components/Avatar';
 
 
 class App extends Component {
@@ -25,10 +26,9 @@ class App extends Component {
   handleRegister = async (e, registerData) => {
     e.preventDefault();
     const currentUser = await registerUser(registerData);
-    const currentAvatar = await postAvatar({ base: "/images/bases/base_light.png" });
+    const currentAvatar = await postAvatar({ base: "/images/bases/base_light.png", hair: "", outfit: "/images/outfits/casual_pink.png" });
     if (!currentUser.errorMessage) {
       this.setState({ currentUser, currentAvatar });
-      console.log(this.state.currentAvatar.base)
     } else {
       this.setState({ errorText: currentUser.errorMessage })
     }
@@ -40,7 +40,6 @@ class App extends Component {
     console.log(currentUser)
     const currentAvatar = await loadAvatar(currentUser.id);
     this.setState({ currentUser, currentAvatar });
-    console.log(this.state.currentAvatar.base)
   }
 
   handleLogout = () => {
@@ -50,7 +49,9 @@ class App extends Component {
     localStorage.removeItem('authToken');
     localStorage.removeItem('username');
     localStorage.removeItem('email');
-    localStorage.removeItem('avatar');
+    localStorage.removeItem('avatar_base');
+    localStorage.removeItem('avatar_hair');
+    localStorage.removeItem('avatar_outfit');
   }
 
   componentDidMount() {
@@ -59,8 +60,10 @@ class App extends Component {
       const username = localStorage.getItem('username');
       const email = localStorage.getItem('email');
       const user = { username, email };
-      const avatar = localStorage.getItem('avatar');
-      console.log(localStorage);
+      const base = localStorage.getItem('avatar_base');
+      const hair = localStorage.getItem('avatar_hair');
+      const outfit = localStorage.getItem('avatar_outfit');
+      const avatar = { base, hair, outfit };
       user && this.setState({
         currentUser: user,
         currentAvatar: avatar
@@ -73,7 +76,7 @@ class App extends Component {
       <div className="App">
         { this.state.currentUser ?
           <div>
-            <img src={this.state.currentAvatar} alt="avatar" />
+            <Avatar currentAvatar={this.state.currentAvatar} />
             <h1>Hello, {this.state.currentUser.username}</h1>
             <button onClick={this.handleLogout}>Logout</button>
           </div>
