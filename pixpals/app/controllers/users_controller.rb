@@ -16,6 +16,8 @@ class UsersController < ApplicationController
         :username,
         :email,
         :password,
-        :password_confirmation)
+        :password_confirmation,
+        :currency)
+        .with_defaults(currency: 100)
   end
 end

@@ -63,3 +63,10 @@ export const putAvatar = async (id, postData) => {
   const avatar = {id: id, base: resp.data.data.base, hair: resp.data.data.hairstyle, outfit: resp.data.data.outfit}
   return avatar;
 }
+
+export const indexItems = async () => {
+  const resp = await api.get('/items');
+  console.log(resp);
+  return resp.data;
+}
+

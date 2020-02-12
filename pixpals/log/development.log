@@ -4221,3 +4221,441 @@ Processing by AvatarsController#create as HTML
 Completed 201 Created in 11ms (Views: 0.4ms | ActiveRecord: 2.8ms | Allocations: 3865)
 
 
+Started GET "/items" for ::1 at 2020-02-12 17:08:11 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+Completed 422 Unprocessable Entity in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 418)
+
+
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "avatars"[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "avatars" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "base" varchar, "hair" varchar, "outfit" varchar, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX "index_avatars_on_user_id" ON "avatars" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "created_by" varchar, "avatar_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_avatar_id" ON "comments" ("avatar_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "inventories"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "inventories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX "index_inventories_on_item_id" ON "inventories" ("item_id")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX "index_inventories_on_user_id" ON "inventories" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "items"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cost" integer, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "currency" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aavatars" ("id" integer NOT NULL PRIMARY KEY, "base" varchar DEFAULT NULL, "hair" varchar DEFAULT NULL, "outfit" varchar DEFAULT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aavatars_on_user_id" ON "aavatars" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aavatars" ("id","base","hair","outfit","user_id","created_at","updated_at")
+                     SELECT "id","base","hair","outfit","user_id","created_at","updated_at" FROM "avatars"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "avatars"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "avatars" ("id" integer NOT NULL PRIMARY KEY, "base" varchar DEFAULT NULL, "hair" varchar DEFAULT NULL, "outfit" varchar DEFAULT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_457088d9d9"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_avatars_on_user_id" ON "avatars" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "avatars" ("id","base","hair","outfit","user_id","created_at","updated_at")
+                     SELECT "id","base","hair","outfit","user_id","created_at","updated_at" FROM "aavatars"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aavatars"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acomments" ("id" integer NOT NULL PRIMARY KEY, "content" varchar DEFAULT NULL, "created_by" varchar DEFAULT NULL, "avatar_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_avatar_id" ON "acomments" ("avatar_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "acomments" ("id","content","created_by","avatar_id","created_at","updated_at")
+                     SELECT "id","content","created_by","avatar_id","created_at","updated_at" FROM "comments"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer NOT NULL PRIMARY KEY, "content" varchar DEFAULT NULL, "created_by" varchar DEFAULT NULL, "avatar_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_23db4fed39"
+FOREIGN KEY ("avatar_id")
+  REFERENCES "avatars" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_avatar_id" ON "comments" ("avatar_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "comments" ("id","content","created_by","avatar_id","created_at","updated_at")
+                     SELECT "id","content","created_by","avatar_id","created_at","updated_at" FROM "acomments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "acomments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ainventories" ("id" integer NOT NULL PRIMARY KEY, "item_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_ainventories_on_user_id" ON "ainventories" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_ainventories_on_item_id" ON "ainventories" ("item_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "ainventories" ("id","item_id","user_id","created_at","updated_at")
+                     SELECT "id","item_id","user_id","created_at","updated_at" FROM "inventories"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "inventories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "inventories" ("id" integer NOT NULL PRIMARY KEY, "item_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_fcf6633a1e"
+FOREIGN KEY ("item_id")
+  REFERENCES "items" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_inventories_on_item_id" ON "inventories" ("item_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_inventories_on_user_id" ON "inventories" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "inventories" ("id","item_id","user_id","created_at","updated_at")
+                     SELECT "id","item_id","user_id","created_at","updated_at" FROM "ainventories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ainventories"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ainventories" ("id" integer NOT NULL PRIMARY KEY, "item_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_ainventories_on_user_id" ON "ainventories" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_ainventories_on_item_id" ON "ainventories" ("item_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "ainventories" ("id","item_id","user_id","created_at","updated_at")
+                     SELECT "id","item_id","user_id","created_at","updated_at" FROM "inventories"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "inventories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "inventories" ("id" integer NOT NULL PRIMARY KEY, "item_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_fcf6633a1e"
+FOREIGN KEY ("item_id")
+  REFERENCES "items" ("id")
+, CONSTRAINT "fk_rails_6642cbdd87"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_inventories_on_item_id" ON "inventories" ("item_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "index_inventories_on_user_id" ON "inventories" ("user_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "inventories" ("id","item_id","user_id","created_at","updated_at")
+                     SELECT "id","item_id","user_id","created_at","updated_at" FROM "ainventories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "ainventories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (21.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200211154208)[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200210174501),
+(20200210174648),
+(20200210175749),
+(20200210175824),
+(20200210180126);
+
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-02-12 22:09:12.084977"], ["updated_at", "2020-02-12 22:09:12.084977"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "e27e2b76179f88fb80f1a17e0407c9dc6c6072a0"], ["created_at", "2020-02-12 22:09:12.093558"], ["updated_at", "2020-02-12 22:09:12.093558"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "avatars"[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE TABLE "avatars" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "base" varchar, "hair" varchar, "outfit" varchar, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX "index_avatars_on_user_id" ON "avatars" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "created_by" varchar, "avatar_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_avatar_id" ON "comments" ("avatar_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "inventories"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "inventories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX "index_inventories_on_item_id" ON "inventories" ("item_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX "index_inventories_on_user_id" ON "inventories" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "items"[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cost" integer, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "currency" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aavatars" ("id" integer NOT NULL PRIMARY KEY, "base" varchar DEFAULT NULL, "hair" varchar DEFAULT NULL, "outfit" varchar DEFAULT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aavatars_on_user_id" ON "aavatars" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aavatars" ("id","base","hair","outfit","user_id","created_at","updated_at")
+                     SELECT "id","base","hair","outfit","user_id","created_at","updated_at" FROM "avatars"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "avatars"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "avatars" ("id" integer NOT NULL PRIMARY KEY, "base" varchar DEFAULT NULL, "hair" varchar DEFAULT NULL, "outfit" varchar DEFAULT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_457088d9d9"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_avatars_on_user_id" ON "avatars" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "avatars" ("id","base","hair","outfit","user_id","created_at","updated_at")
+                     SELECT "id","base","hair","outfit","user_id","created_at","updated_at" FROM "aavatars"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aavatars"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acomments" ("id" integer NOT NULL PRIMARY KEY, "content" varchar DEFAULT NULL, "created_by" varchar DEFAULT NULL, "avatar_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_avatar_id" ON "acomments" ("avatar_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "acomments" ("id","content","created_by","avatar_id","created_at","updated_at")
+                     SELECT "id","content","created_by","avatar_id","created_at","updated_at" FROM "comments"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer NOT NULL PRIMARY KEY, "content" varchar DEFAULT NULL, "created_by" varchar DEFAULT NULL, "avatar_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_23db4fed39"
+FOREIGN KEY ("avatar_id")
+  REFERENCES "avatars" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_avatar_id" ON "comments" ("avatar_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("id","content","created_by","avatar_id","created_at","updated_at")
+                     SELECT "id","content","created_by","avatar_id","created_at","updated_at" FROM "acomments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "acomments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ainventories" ("id" integer NOT NULL PRIMARY KEY, "item_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_ainventories_on_user_id" ON "ainventories" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_ainventories_on_item_id" ON "ainventories" ("item_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "ainventories" ("id","item_id","user_id","created_at","updated_at")
+                     SELECT "id","item_id","user_id","created_at","updated_at" FROM "inventories"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "inventories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "inventories" ("id" integer NOT NULL PRIMARY KEY, "item_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_fcf6633a1e"
+FOREIGN KEY ("item_id")
+  REFERENCES "items" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_inventories_on_item_id" ON "inventories" ("item_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_inventories_on_user_id" ON "inventories" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "inventories" ("id","item_id","user_id","created_at","updated_at")
+                     SELECT "id","item_id","user_id","created_at","updated_at" FROM "ainventories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ainventories"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ainventories" ("id" integer NOT NULL PRIMARY KEY, "item_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_ainventories_on_user_id" ON "ainventories" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_ainventories_on_item_id" ON "ainventories" ("item_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ainventories" ("id","item_id","user_id","created_at","updated_at")
+                     SELECT "id","item_id","user_id","created_at","updated_at" FROM "inventories"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "inventories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "inventories" ("id" integer NOT NULL PRIMARY KEY, "item_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_fcf6633a1e"
+FOREIGN KEY ("item_id")
+  REFERENCES "items" ("id")
+, CONSTRAINT "fk_rails_6642cbdd87"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_inventories_on_item_id" ON "inventories" ("item_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_inventories_on_user_id" ON "inventories" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "inventories" ("id","item_id","user_id","created_at","updated_at")
+                     SELECT "id","item_id","user_id","created_at","updated_at" FROM "ainventories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ainventories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200211154208)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200210174501),
+(20200210174648),
+(20200210175749),
+(20200210175824),
+(20200210180126);
+
+[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-02-12 22:09:12.398006"], ["updated_at", "2020-02-12 22:09:12.398006"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.9ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-02-12 22:09:12.405146"], ["key", "environment"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "e27e2b76179f88fb80f1a17e0407c9dc6c6072a0"], ["created_at", "2020-02-12 22:09:12.435049"], ["updated_at", "2020-02-12 22:09:12.435049"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (1.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "cost", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Wizard Robe"], ["cost", 1000], ["image", "/images/outfits/robe_green.png"], ["created_at", "2020-02-12 22:09:12.471219"], ["updated_at", "2020-02-12 22:09:12.471219"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "cost", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Casual Outfit"], ["cost", 150], ["image", "/images/outfits/casual_pink.png"], ["created_at", "2020-02-12 22:09:12.483168"], ["updated_at", "2020-02-12 22:09:12.483168"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "cost", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Modern Vampire"], ["cost", 500], ["image", "/images/outfits/vamp_purple.png"], ["created_at", "2020-02-12 22:09:12.492588"], ["updated_at", "2020-02-12 22:09:12.492588"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "cost", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Pippy Longstocking"], ["cost", 900], ["image", "/images/hairstyles/pippy_red.png"], ["created_at", "2020-02-12 22:09:12.499040"], ["updated_at", "2020-02-12 22:09:12.499040"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("name", "cost", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Buzzcut"], ["cost", 50], ["image", "/images/hairstyles/buzz_yellow.png"], ["created_at", "2020-02-12 22:09:12.504558"], ["updated_at", "2020-02-12 22:09:12.504558"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "cost", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Low Bun"], ["cost", 350], ["image", "/images/hairstyles/bun_green.png"], ["created_at", "2020-02-12 22:09:12.631568"], ["updated_at", "2020-02-12 22:09:12.631568"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/items" for ::1 at 2020-02-12 17:09:24 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as */*
+  Parameters: {"content"=>"heyyy", "item"=>{}}
+Completed 422 Unprocessable Entity in 5ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 428)
+
+
+Started GET "/items" for ::1 at 2020-02-12 17:09:38 -0500
+Processing by ItemsController#index as HTML
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 179)
+
+
+Started POST "/auth/login" for ::1 at 2020-02-12 17:13:05 -0500
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"corey@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"corey@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "corey@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+Completed 401 Unauthorized in 16ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 4009)
+
+
+Started POST "/signup" for ::1 at 2020-02-12 17:13:30 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"hi", "email"=>"hi@hi.com", "password"=>"[FILTERED]", "user"=>{"username"=>"hi", "email"=>"hi@hi.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "hi"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "hi@hi.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "currency", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "hi"], ["email", "hi@hi.com"], ["password_digest", "$2a$12$9b2eEJzNhJl0BXjb.h0ju.6DbONa22/EPqEvL1204uV147.TGb07S"], ["currency", 100], ["created_at", "2020-02-12 22:13:30.412469"], ["updated_at", "2020-02-12 22:13:30.412469"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "hi@hi.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "hi@hi.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+Completed 201 Created in 840ms (Views: 0.4ms | ActiveRecord: 3.2ms | Allocations: 10279)
+
+
+Started POST "/avatars" for ::1 at 2020-02-12 17:13:31 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameter: :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:10:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:10:in `create'
+  [1m[36mAvatar Create (0.6ms)[0m  [1m[32mINSERT INTO "avatars" ("base", "hair", "outfit", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["base", "/images/bases/base_light.png"], ["hair", ""], ["outfit", "/images/outfits/casual_pink.png"], ["user_id", 1], ["created_at", "2020-02-12 22:13:31.035093"], ["updated_at", "2020-02-12 22:13:31.035093"]]
+  ↳ app/controllers/avatars_controller.rb:10:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:10:in `create'
+Completed 201 Created in 25ms (Views: 0.5ms | ActiveRecord: 3.0ms | Allocations: 8609)
+
+
+Started GET "/items" for ::1 at 2020-02-12 17:13:41 -0500
+Processing by ItemsController#index as HTML
+Completed 422 Unprocessable Entity in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 96)
+
+
+Started GET "/items" for ::1 at 2020-02-12 17:15:09 -0500
+Processing by ItemsController#index as */*
+  Parameters: {"content"=>"heyyy", "item"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mItem Load (2.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 45ms (Views: 37.1ms | ActiveRecord: 3.1ms | Allocations: 4928)
+
+
+Started GET "/items" for ::1 at 2020-02-12 17:17:01 -0500
+Processing by ItemsController#index as HTML
+Completed 422 Unprocessable Entity in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 95)
+
+
+Started GET "/items" for ::1 at 2020-02-12 17:17:11 -0500
+Processing by ItemsController#index as HTML
+Completed 422 Unprocessable Entity in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 95)
+
+
+Started GET "/items" for ::1 at 2020-02-12 17:19:17 -0500
+Processing by ItemsController#index as HTML
+Completed 422 Unprocessable Entity in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 95)
+
+
+Started GET "/items" for ::1 at 2020-02-12 17:19:20 -0500
+Processing by ItemsController#index as HTML
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 95)
+
+
+Started GET "/items" for ::1 at 2020-02-12 17:20:52 -0500
+Processing by ItemsController#index as HTML
+Completed 422 Unprocessable Entity in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 95)
+
+
+Started GET "/items" for ::1 at 2020-02-12 17:23:26 -0500
+Processing by ItemsController#index as HTML
+Completed 422 Unprocessable Entity in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 95)
+
+
+Started GET "/items" for ::1 at 2020-02-12 17:23:37 -0500
+Processing by ItemsController#index as HTML
+Completed 422 Unprocessable Entity in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 95)
+
+
+Started GET "/items" for ::1 at 2020-02-12 17:28:06 -0500
+Processing by ItemsController#index as */*
+  Parameters: {"content"=>"heyyy", "item"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 41ms (Views: 3.4ms | ActiveRecord: 0.4ms | Allocations: 2160)
+
+
+Started GET "/items" for ::1 at 2020-02-12 17:33:51 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (undefined method `skip_before_actions' for ItemsController:Class
+Did you mean?  skip_before_action):
+  
+app/controllers/items_controller.rb:2:in `<class:ItemsController>'
+app/controllers/items_controller.rb:1:in `<main>'
+Started GET "/items" for ::1 at 2020-02-12 17:34:59 -0500
+  
+ActionController::RoutingError (undefined method `skip_before_actions' for ItemsController:Class
+Did you mean?  skip_before_action):
+  
+app/controllers/items_controller.rb:2:in `<class:ItemsController>'
+app/controllers/items_controller.rb:1:in `<main>'
+Started GET "/items" for ::1 at 2020-02-12 17:35:19 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 26ms (Views: 18.2ms | ActiveRecord: 1.5ms | Allocations: 6113)
+
+

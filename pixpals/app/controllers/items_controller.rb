@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  skip_before_action :authorize_request
   before_action :set_item, only: [:show, :update, :destroy]
 
   def index

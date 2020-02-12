@@ -7,6 +7,7 @@ import './App.css';
 import Register from './components/Register';
 import Login from './components/Login';
 import Avatar from './components/Avatar';
+import Shop from './components/Shop';
 
 
 class App extends Component {
@@ -96,6 +97,9 @@ class App extends Component {
             handleRegister={this.handleRegister}
             errorText={this.state.errorText}
           />
+        )} />
+        <Route path="/shop" render={() => (
+          <Shop />
         )} />
       </div>
     );
