@@ -13370,3 +13370,1210 @@ Processing by AvatarsController#show as HTML
 Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1297)
 
 
+Started GET "/inventories" for ::1 at 2020-02-13 16:12:49 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mInventory Load (0.6ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 43ms (Views: 12.1ms | ActiveRecord: 2.6ms | Allocations: 14761)
+
+
+Started GET "/items/1" for ::1 at 2020-02-13 16:12:49 -0500
+Processing by ItemsController#show as HTML
+Started GET "/items/3" for ::1 at 2020-02-13 16:12:49 -0500
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 5042)
+
+
+Started GET "/items/4" for ::1 at 2020-02-13 16:12:49 -0500
+Started GET "/items/2" for ::1 at 2020-02-13 16:12:49 -0500
+Processing by ItemsController#show as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  Parameters: {"id"=>"4"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Processing by ItemsController#show as HTML
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 1758)
+
+
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 20ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1280)
+
+
+Started GET "/items/4" for ::1 at 2020-02-13 16:12:49 -0500
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 24ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 1991)
+
+
+Started GET "/items/3" for ::1 at 2020-02-13 16:12:49 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 688)
+
+
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 688)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:12:53 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"hair"=>"/images/hairstyles/pippy_red.png", "id"=>"3", "avatar"=>{"hair"=>"/images/hairstyles/pippy_red.png"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.6ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.6ms)[0m  [1m[33mUPDATE "avatars" SET "hair" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["hair", "/images/hairstyles/pippy_red.png"], ["updated_at", "2020-02-13 21:12:53.334371"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 45ms (Views: 0.2ms | ActiveRecord: 3.8ms | Allocations: 8193)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:12:53 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 1303)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:12:59 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/vamp_purple.png", "id"=>"3", "avatar"=>{"outfit"=>"/images/outfits/vamp_purple.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.3ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.4ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/vamp_purple.png"], ["updated_at", "2020-02-13 21:12:59.150789"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 32ms (Views: 6.9ms | ActiveRecord: 3.9ms | Allocations: 4348)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:12:59 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1299)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:13:56 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/robe_green.png", "id"=>"3", "avatar"=>{"outfit"=>"/images/outfits/robe_green.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.4ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/robe_green.png"], ["updated_at", "2020-02-13 21:13:56.190506"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 4348)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:13:56 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 1298)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:14:19 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/casual_pink.png", "id"=>"3", "avatar"=>{"outfit"=>"/images/outfits/casual_pink.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.8ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/casual_pink.png"], ["updated_at", "2020-02-13 21:14:19.643257"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 3.5ms | Allocations: 4344)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:14:19 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1298)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:14:23 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/robe_green.png", "id"=>"3", "avatar"=>{"outfit"=>"/images/outfits/robe_green.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.4ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/robe_green.png"], ["updated_at", "2020-02-13 21:14:23.602030"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 3.4ms | Allocations: 4342)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:14:23 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1298)
+
+
+Started GET "/inventories" for ::1 at 2020-02-13 16:16:31 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.6ms | Allocations: 2174)
+
+
+Started GET "/items/4" for ::1 at 2020-02-13 16:16:31 -0500
+Processing by ItemsController#show as HTML
+Started GET "/items/3" for ::1 at 2020-02-13 16:16:31 -0500
+  Parameters: {"id"=>"4"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Processing by ItemsController#show as HTML
+Started GET "/items/1" for ::1 at 2020-02-13 16:16:31 -0500
+Started GET "/items/2" for ::1 at 2020-02-13 16:16:31 -0500
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+  Parameters: {"id"=>"3"}
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 688)
+
+
+Completed 200 OK in 387ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 1757)
+
+
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 2801)
+
+
+Processing by ItemsController#show as HTML
+Started GET "/items/4" for ::1 at 2020-02-13 16:16:31 -0500
+Started GET "/items/3" for ::1 at 2020-02-13 16:16:31 -0500
+  Parameters: {"id"=>"1"}
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1123)
+
+
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 1440)
+
+
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 688)
+
+
+Started GET "/inventories" for ::1 at 2020-02-13 16:17:34 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 10ms (Views: 5.2ms | ActiveRecord: 0.4ms | Allocations: 2158)
+
+
+Started GET "/items/4" for ::1 at 2020-02-13 16:17:34 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Started GET "/items/3" for ::1 at 2020-02-13 16:17:34 -0500
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+Started GET "/items/2" for ::1 at 2020-02-13 16:17:34 -0500
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 1453)
+
+
+Started GET "/items/1" for ::1 at 2020-02-13 16:17:34 -0500
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1400)
+
+
+Processing by ItemsController#show as HTML
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 2820)
+
+
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/items/3" for ::1 at 2020-02-13 16:17:34 -0500
+Started GET "/items/4" for ::1 at 2020-02-13 16:17:34 -0500
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 68ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 1215)
+
+
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 688)
+
+
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 688)
+
+
+Started GET "/inventories" for ::1 at 2020-02-13 16:17:42 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 2158)
+
+
+Started GET "/items/4" for ::1 at 2020-02-13 16:17:42 -0500
+Started GET "/items/3" for ::1 at 2020-02-13 16:17:42 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by ItemsController#show as HTML
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Started GET "/items/1" for ::1 at 2020-02-13 16:17:42 -0500
+Completed 200 OK in 37ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1337)
+
+
+Started GET "/items/2" for ::1 at 2020-02-13 16:17:42 -0500
+  Parameters: {"id"=>"4"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 846)
+
+
+Started GET "/items/3" for ::1 at 2020-02-13 16:17:42 -0500
+Processing by ItemsController#show as HTML
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"2"}
+Started GET "/items/4" for ::1 at 2020-02-13 16:17:42 -0500
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1294)
+
+
+Processing by ItemsController#show as HTML
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 2232)
+
+
+  Parameters: {"id"=>"3"}
+Processing by ItemsController#show as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Parameters: {"id"=>"4"}
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 805)
+
+
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1119)
+
+
+Started GET "/inventories" for ::1 at 2020-02-13 16:18:50 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 2158)
+
+
+Started GET "/items/4" for ::1 at 2020-02-13 16:18:50 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 688)
+
+
+Started GET "/items/3" for ::1 at 2020-02-13 16:18:50 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 688)
+
+
+Started GET "/items/1" for ::1 at 2020-02-13 16:18:50 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Started GET "/items/2" for ::1 at 2020-02-13 16:18:50 -0500
+Started GET "/items/3" for ::1 at 2020-02-13 16:18:50 -0500
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1507)
+
+
+Started GET "/items/4" for ::1 at 2020-02-13 16:18:50 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"2"}
+Processing by ItemsController#show as HTML
+Processing by ItemsController#show as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Parameters: {"id"=>"4"}
+  Parameters: {"id"=>"3"}
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 919)
+
+
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 1041)
+
+
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 1926)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:19:51 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/casual_pink.png", "id"=>"3", "avatar"=>{"outfit"=>"/images/outfits/casual_pink.png"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.4ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/casual_pink.png"], ["updated_at", "2020-02-13 21:19:51.177732"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 4385)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:19:51 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1298)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:19:53 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/vamp_purple.png", "id"=>"3", "avatar"=>{"outfit"=>"/images/outfits/vamp_purple.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.4ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/vamp_purple.png"], ["updated_at", "2020-02-13 21:19:53.150577"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 3.6ms | Allocations: 4342)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:19:53 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1299)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:19:54 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/vamp_purple.png", "id"=>"3", "avatar"=>{"outfit"=>"/images/outfits/vamp_purple.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 2411)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:19:54 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1298)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:20:30 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/casual_pink.png", "id"=>"3", "avatar"=>{"outfit"=>"/images/outfits/casual_pink.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (1.0ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/casual_pink.png"], ["updated_at", "2020-02-13 21:20:30.622328"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 4343)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:20:30 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1298)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:20:33 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"hair"=>"/images/hairstyles/pippy_red.png", "id"=>"3", "avatar"=>{"hair"=>"/images/hairstyles/pippy_red.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 2411)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:20:33 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1298)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:20:56 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/vamp_purple.png", "id"=>"3", "avatar"=>{"outfit"=>"/images/outfits/vamp_purple.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.4ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/vamp_purple.png"], ["updated_at", "2020-02-13 21:20:56.089684"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 4342)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:20:56 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1298)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:20:57 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/robe_green.png", "id"=>"3", "avatar"=>{"outfit"=>"/images/outfits/robe_green.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.4ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/robe_green.png"], ["updated_at", "2020-02-13 21:20:57.671826"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 2.2ms | Allocations: 4342)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:20:57 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 1298)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:20:58 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/vamp_purple.png", "id"=>"3", "avatar"=>{"outfit"=>"/images/outfits/vamp_purple.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.4ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/vamp_purple.png"], ["updated_at", "2020-02-13 21:20:58.873924"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 4342)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:20:58 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1298)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:21:00 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/casual_pink.png", "id"=>"3", "avatar"=>{"outfit"=>"/images/outfits/casual_pink.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.4ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/casual_pink.png"], ["updated_at", "2020-02-13 21:21:00.216668"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 3.3ms | Allocations: 4342)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:21:00 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1298)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:21:02 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"hair"=>"/images/hairstyles/pippy_red.png", "id"=>"3", "avatar"=>{"hair"=>"/images/hairstyles/pippy_red.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 2412)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:21:02 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1299)
+
+
+Started GET "/items" for ::1 at 2020-02-13 16:21:06 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 1581)
+
+
+Started POST "/inventories" for ::1 at 2020-02-13 16:21:09 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"item_id"=>2, "inventory"=>{"item_id"=>2}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameter: :inventory[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[36mInventory Create (1.5ms)[0m  [1m[32mINSERT INTO "inventories" ("item_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["item_id", 2], ["user_id", 3], ["created_at", "2020-02-13 21:21:09.187488"], ["updated_at", "2020-02-13 21:21:09.187488"]]
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+Completed 201 Created in 14ms (Views: 0.3ms | ActiveRecord: 3.2ms | Allocations: 4742)
+
+
+Started POST "/inventories" for ::1 at 2020-02-13 16:21:12 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"item_id"=>5, "inventory"=>{"item_id"=>5}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameter: :inventory[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[36mInventory Create (0.4ms)[0m  [1m[32mINSERT INTO "inventories" ("item_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["item_id", 5], ["user_id", 3], ["created_at", "2020-02-13 21:21:12.894256"], ["updated_at", "2020-02-13 21:21:12.894256"]]
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+Completed 201 Created in 11ms (Views: 0.4ms | ActiveRecord: 3.2ms | Allocations: 4421)
+
+
+Started POST "/inventories" for ::1 at 2020-02-13 16:21:15 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"item_id"=>6, "inventory"=>{"item_id"=>6}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameter: :inventory[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[36mInventory Create (0.4ms)[0m  [1m[32mINSERT INTO "inventories" ("item_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["item_id", 6], ["user_id", 3], ["created_at", "2020-02-13 21:21:15.195206"], ["updated_at", "2020-02-13 21:21:15.195206"]]
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+Completed 201 Created in 10ms (Views: 0.3ms | ActiveRecord: 2.8ms | Allocations: 4421)
+
+
+Started POST "/inventories" for ::1 at 2020-02-13 16:21:15 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"item_id"=>6, "inventory"=>{"item_id"=>6}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameter: :inventory[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[36mInventory Create (0.5ms)[0m  [1m[32mINSERT INTO "inventories" ("item_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["item_id", 6], ["user_id", 3], ["created_at", "2020-02-13 21:21:15.379582"], ["updated_at", "2020-02-13 21:21:15.379582"]]
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+Completed 201 Created in 14ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 4422)
+
+
+Started POST "/inventories" for ::1 at 2020-02-13 16:21:15 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"item_id"=>6, "inventory"=>{"item_id"=>6}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameter: :inventory[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[36mInventory Create (0.4ms)[0m  [1m[32mINSERT INTO "inventories" ("item_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["item_id", 6], ["user_id", 3], ["created_at", "2020-02-13 21:21:15.566549"], ["updated_at", "2020-02-13 21:21:15.566549"]]
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+Completed 201 Created in 12ms (Views: 0.4ms | ActiveRecord: 3.6ms | Allocations: 4421)
+
+
+Started POST "/inventories" for ::1 at 2020-02-13 16:21:15 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"item_id"=>6, "inventory"=>{"item_id"=>6}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameter: :inventory[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[36mInventory Create (0.6ms)[0m  [1m[32mINSERT INTO "inventories" ("item_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["item_id", 6], ["user_id", 3], ["created_at", "2020-02-13 21:21:15.743840"], ["updated_at", "2020-02-13 21:21:15.743840"]]
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+Completed 201 Created in 12ms (Views: 0.3ms | ActiveRecord: 3.6ms | Allocations: 4422)
+
+
+Started POST "/inventories" for ::1 at 2020-02-13 16:21:15 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"item_id"=>6, "inventory"=>{"item_id"=>6}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameter: :inventory[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[36mInventory Create (0.4ms)[0m  [1m[32mINSERT INTO "inventories" ("item_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["item_id", 6], ["user_id", 3], ["created_at", "2020-02-13 21:21:15.930031"], ["updated_at", "2020-02-13 21:21:15.930031"]]
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+Completed 201 Created in 11ms (Views: 0.3ms | ActiveRecord: 3.8ms | Allocations: 4421)
+
+
+Started GET "/inventories" for ::1 at 2020-02-13 16:21:21 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.4ms | Allocations: 3013)
+
+
+Started GET "/items/4" for ::1 at 2020-02-13 16:21:21 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 704)
+
+
+Started GET "/items/3" for ::1 at 2020-02-13 16:21:21 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 688)
+
+
+Started GET "/items/1" for ::1 at 2020-02-13 16:21:21 -0500
+Started GET "/items/3" for ::1 at 2020-02-13 16:21:21 -0500
+Started GET "/items/4" for ::1 at 2020-02-13 16:21:21 -0500
+Started GET "/items/2" for ::1 at 2020-02-13 16:21:21 -0500
+Processing by ItemsController#show as HTML
+Processing by ItemsController#show as HTML
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"4"}
+  Parameters: {"id"=>"2"}
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1194)
+
+
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1857)
+
+
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 36ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 1880)
+
+
+Completed 200 OK in 36ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 1918)
+
+
+Started GET "/items/2" for ::1 at 2020-02-13 16:21:21 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 688)
+
+
+Started GET "/items/5" for ::1 at 2020-02-13 16:21:22 -0500
+Started GET "/items/6" for ::1 at 2020-02-13 16:21:22 -0500
+Processing by ItemsController#show as HTML
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"5"}
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 791)
+
+
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1454)
+
+
+Started GET "/items/6" for ::1 at 2020-02-13 16:21:22 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 43ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 688)
+
+
+Started GET "/items/6" for ::1 at 2020-02-13 16:21:22 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 688)
+
+
+Started GET "/items/6" for ::1 at 2020-02-13 16:21:22 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 688)
+
+
+Started GET "/items/6" for ::1 at 2020-02-13 16:21:22 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:37:in `set_item'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 688)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:21:24 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"hair"=>"/images/hairstyles/bun_green.png", "id"=>"3", "avatar"=>{"hair"=>"/images/hairstyles/bun_green.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.3ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.4ms)[0m  [1m[33mUPDATE "avatars" SET "hair" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["hair", "/images/hairstyles/bun_green.png"], ["updated_at", "2020-02-13 21:21:24.135620"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 4342)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:21:24 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1298)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:21:27 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"hair"=>"/images/hairstyles/buzz_yellow.png", "id"=>"3", "avatar"=>{"hair"=>"/images/hairstyles/buzz_yellow.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.4ms)[0m  [1m[33mUPDATE "avatars" SET "hair" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["hair", "/images/hairstyles/buzz_yellow.png"], ["updated_at", "2020-02-13 21:21:27.269902"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.2ms | Allocations: 4343)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:21:27 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1299)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:21:29 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/robe_green.png", "id"=>"3", "avatar"=>{"outfit"=>"/images/outfits/robe_green.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.5ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/robe_green.png"], ["updated_at", "2020-02-13 21:21:29.533246"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 3.7ms | Allocations: 4342)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:21:29 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1298)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:21:31 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/vamp_purple.png", "id"=>"3", "avatar"=>{"outfit"=>"/images/outfits/vamp_purple.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.4ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/vamp_purple.png"], ["updated_at", "2020-02-13 21:21:31.114886"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 3.4ms | Allocations: 4342)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:21:31 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1298)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:22:20 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/casual_pink.png", "id"=>"3", "avatar"=>{"outfit"=>"/images/outfits/casual_pink.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.4ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/casual_pink.png"], ["updated_at", "2020-02-13 21:22:20.507909"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 4343)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:22:20 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1299)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:22:22 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"hair"=>"/images/hairstyles/pippy_red.png", "id"=>"3", "avatar"=>{"hair"=>"/images/hairstyles/pippy_red.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.7ms)[0m  [1m[33mUPDATE "avatars" SET "hair" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["hair", "/images/hairstyles/pippy_red.png"], ["updated_at", "2020-02-13 21:22:22.784276"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 3.9ms | Allocations: 4342)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:22:22 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1298)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:22:47 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/robe_green.png", "id"=>"3", "avatar"=>{"outfit"=>"/images/outfits/robe_green.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.4ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/robe_green.png"], ["updated_at", "2020-02-13 21:22:47.090934"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 4343)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:22:47 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1298)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:23:37 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/vamp_purple.png", "id"=>"3", "avatar"=>{"outfit"=>"/images/outfits/vamp_purple.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.9ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/vamp_purple.png"], ["updated_at", "2020-02-13 21:23:37.098652"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 4342)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:23:37 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1298)
+
+
+Started PUT "/avatars/3" for ::1 at 2020-02-13 16:23:40 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"hair"=>"/images/hairstyles/bun_green.png", "id"=>"3", "avatar"=>{"hair"=>"/images/hairstyles/bun_green.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[36mAvatar Update (0.4ms)[0m  [1m[33mUPDATE "avatars" SET "hair" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["hair", "/images/hairstyles/bun_green.png"], ["updated_at", "2020-02-13 21:23:40.888826"], ["id", 3]]
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:19:in `update'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 3.5ms | Allocations: 4342)
+
+
+Started GET "/avatars/3" for ::1 at 2020-02-13 16:23:40 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:31:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1298)
+
+

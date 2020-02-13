@@ -37,11 +37,12 @@ export default class Inventory extends Component {
       await putAvatar(avatarId, itemData);
       await loadAvatar(avatarId);
     }
+    this.props.avatarRefresh();
   }
 
   render() {
     return (
-      <div>
+      <div className="inventory">
         {this.state.items.map((item, index) => (
           <div key={index}>
             <img className="inv-item" src={item.image} alt={item.name} />

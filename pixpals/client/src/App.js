@@ -58,6 +58,16 @@ class App extends Component {
     localStorage.removeItem('avatar_id');
   }
 
+  avatarRefresh = () => {
+    const base = localStorage.getItem('avatar_base');
+    const hair = localStorage.getItem('avatar_hair');
+    const outfit = localStorage.getItem('avatar_outfit');
+    const avatar = { base, hair, outfit };
+    this.setState({
+      currentAvatar: avatar
+    })
+  }
+
   componentDidMount() {
     verifyUser();
     if (localStorage.getItem('authToken')) {
@@ -78,17 +88,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        { this.state.currentUser ?
+        {this.state.currentUser ?
           <div>
             <Avatar currentAvatar={this.state.currentAvatar} />
             <h1>Hello, {this.state.currentUser.username}</h1>
             <button onClick={this.handleLogout}>Logout</button>
           </div>
           :
-            <nav>
-              <Link to="/register"><button>Register</button></Link>
-              <Link to="/login"><button>Login</button></Link>
-            </nav>
+          <nav>
+            <Link to="/register"><button>Register</button></Link>
+            <Link to="/login"><button>Login</button></Link>
+          </nav>
         }
         <Route path="/login" render={() => (
           <Login
@@ -105,7 +115,7 @@ class App extends Component {
           <Shop />
         )} />
         <Route path="/inventory" render={() => (
-          <Inventory />
+          <Inventory avatarRefresh={this.avatarRefresh} />
         )} />
       </div>
     );

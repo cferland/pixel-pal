@@ -6,7 +6,7 @@
   width: 20%;
   height: 0;
   padding-bottom: 20%;
-  position: absolute;
+  position: sticky;
   right: 0;
 }
 
@@ -30,6 +30,16 @@
 
 .shop-item {
   width: 20%;
+}
+
+.inventory {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.inv-item {
+  width: 15vw;
 }
 
 button {
