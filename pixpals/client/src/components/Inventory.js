@@ -28,6 +28,14 @@ export default class Inventory extends Component {
       const itemData = { outfit: item.image }
       await putAvatar(avatarId, itemData);
       await loadAvatar(avatarId);
+    } else if (item.image.search('/hairstyles/') !== -1) {
+      const itemData = { hair: item.image }
+      await putAvatar(avatarId, itemData);
+      await loadAvatar(avatarId);
+    } else if (item.image.search('/bases/') !== -1) {
+      const itemData = { base: item.image }
+      await putAvatar(avatarId, itemData);
+      await loadAvatar(avatarId);
     }
   }
 
