@@ -4659,3 +4659,400 @@ Processing by ItemsController#index as HTML
 Completed 200 OK in 26ms (Views: 18.2ms | ActiveRecord: 1.5ms | Allocations: 6113)
 
 
+Started GET "/inventories" for ::1 at 2020-02-13 08:50:59 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InventoriesController#index as */*
+  Parameters: {"content"=>"heyyy", "inventory"=>{}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+Completed 404 Not Found in 44ms (Views: 1.0ms | ActiveRecord: 4.7ms | Allocations: 7827)
+
+
+Started POST "/inventories" for ::1 at 2020-02-13 08:52:02 -0500
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for InventoriesController):
+  
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.1) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started PUT "/inventories" for ::1 at 2020-02-13 08:52:10 -0500
+  
+ActionController::RoutingError (No route matches [PUT] "/inventories"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started PATCH "/inventories" for ::1 at 2020-02-13 08:52:22 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/inventories"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/inventories" for ::1 at 2020-02-13 08:52:29 -0500
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for InventoriesController):
+  
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.1) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/inventories" for ::1 at 2020-02-13 08:53:00 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by InventoriesController#create as */*
+  Parameters: {"user_id"=>1, "item_id"=>1, "inventory"=>{"item_id"=>1, "user_id"=>1}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+Completed 404 Not Found in 29ms (Views: 0.2ms | ActiveRecord: 2.2ms | Allocations: 6571)
+
+
+Started POST "/signup" for ::1 at 2020-02-13 08:57:34 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"corey", "email"=>"corey@corey.com", "password"=>"[FILTERED]", "user"=>{"username"=>"corey", "email"=>"corey@corey.com"}}
+[31mUnpermitted parameter: :user[0m
+[31mUnpermitted parameters: :username, :email[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 422 Unprocessable Entity in 16ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 6782)
+
+
+Started POST "/avatars" for ::1 at 2020-02-13 08:57:34 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameter: :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:10:in `create'
+  [1m[36mAvatar Create (3.1ms)[0m  [1m[32mINSERT INTO "avatars" ("base", "hair", "outfit", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["base", "/images/bases/base_light.png"], ["hair", ""], ["outfit", "/images/outfits/casual_pink.png"], ["user_id", 1], ["created_at", "2020-02-13 13:57:34.131146"], ["updated_at", "2020-02-13 13:57:34.131146"]]
+  ↳ app/controllers/avatars_controller.rb:10:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:10:in `create'
+Completed 201 Created in 35ms (Views: 0.5ms | ActiveRecord: 5.8ms | Allocations: 8565)
+
+
+Started POST "/auth/login" for ::1 at 2020-02-13 08:57:53 -0500
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"corey@corey.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"corey@corey.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "corey@corey.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+Completed 401 Unauthorized in 7ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 998)
+
+
+Started POST "/auth/login" for ::1 at 2020-02-13 08:58:04 -0500
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"corey@corey.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"corey@corey.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "corey@corey.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 714)
+
+
+Started POST "/auth/login" for ::1 at 2020-02-13 08:58:22 -0500
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"corey@corey.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"corey@corey.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "corey@corey.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 698)
+
+
+Started POST "/signup" for ::1 at 2020-02-13 08:58:40 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"admin", "email"=>"admin@admin.com", "password"=>"[FILTERED]", "user"=>{"username"=>"admin", "email"=>"admin@admin.com"}}
+[31mUnpermitted parameter: :user[0m
+[31mUnpermitted parameters: :username, :email[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 422 Unprocessable Entity in 12ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 5124)
+
+
+Started POST "/avatars" for ::1 at 2020-02-13 08:58:40 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameter: :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:10:in `create'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:10:in `create'
+  [1m[36mAvatar Create (0.8ms)[0m  [1m[32mINSERT INTO "avatars" ("base", "hair", "outfit", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["base", "/images/bases/base_light.png"], ["hair", ""], ["outfit", "/images/outfits/casual_pink.png"], ["user_id", 1], ["created_at", "2020-02-13 13:58:40.906208"], ["updated_at", "2020-02-13 13:58:40.906208"]]
+  ↳ app/controllers/avatars_controller.rb:10:in `create'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:10:in `create'
+Completed 201 Created in 15ms (Views: 0.6ms | ActiveRecord: 2.8ms | Allocations: 3839)
+
+
+Started POST "/signup" for ::1 at 2020-02-13 08:59:03 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"hey", "email"=>"hey@hey.com", "password"=>"[FILTERED]", "user"=>{"username"=>"hey", "email"=>"hey@hey.com"}}
+[31mUnpermitted parameter: :user[0m
+[31mUnpermitted parameters: :username, :email[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 422 Unprocessable Entity in 9ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 5107)
+
+
+Started POST "/avatars" for ::1 at 2020-02-13 08:59:03 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+Completed 422 Unprocessable Entity in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 95)
+
+
+Started POST "/signup" for ::1 at 2020-02-13 09:00:47 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"hey", "email"=>"hey@hey.com", "password"=>"[FILTERED]", "user"=>{"username"=>"hey", "email"=>"hey@hey.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "hey"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "hey@hey.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "currency", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "hey"], ["email", "hey@hey.com"], ["password_digest", "$2a$12$5Wss2lnRjGRVWAxQwen4feFAGde1LaB8L1fseXshSBggiKhnuQXMa"], ["currency", 100], ["created_at", "2020-02-13 14:00:47.495123"], ["updated_at", "2020-02-13 14:00:47.495123"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "hey@hey.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "hey@hey.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+Completed 201 Created in 862ms (Views: 0.4ms | ActiveRecord: 4.6ms | Allocations: 13635)
+
+
+Started POST "/avatars" for ::1 at 2020-02-13 09:00:48 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameter: :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:10:in `create'
+  [1m[36mAvatar Create (0.5ms)[0m  [1m[32mINSERT INTO "avatars" ("base", "hair", "outfit", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["base", "/images/bases/base_light.png"], ["hair", ""], ["outfit", "/images/outfits/casual_pink.png"], ["user_id", 2], ["created_at", "2020-02-13 14:00:48.083014"], ["updated_at", "2020-02-13 14:00:48.083014"]]
+  ↳ app/controllers/avatars_controller.rb:10:in `create'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:10:in `create'
+Completed 201 Created in 20ms (Views: 0.3ms | ActiveRecord: 2.7ms | Allocations: 7455)
+
+
+Started POST "/inventories" for ::1 at 2020-02-13 09:01:59 -0500
+Processing by InventoriesController#create as */*
+  Parameters: {"username"=>1, "item_id"=>1, "inventory"=>{"item_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+Completed 404 Not Found in 2ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 750)
+
+
+Started POST "/inventories" for ::1 at 2020-02-13 09:02:08 -0500
+Processing by InventoriesController#create as */*
+  Parameters: {"user_id"=>1, "item_id"=>1, "inventory"=>{"item_id"=>1, "user_id"=>1}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 723)
+
+
+Started POST "/inventories" for ::1 at 2020-02-13 09:02:15 -0500
+Processing by InventoriesController#create as */*
+  Parameters: {"user_id"=>1, "item_id"=>1, "inventory"=>{"item_id"=>1, "user_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+Completed 404 Not Found in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 724)
+
+
+Started POST "/inventories" for ::1 at 2020-02-13 09:04:14 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by InventoriesController#create as */*
+  Parameters: {"item_id"=>1, "inventory"=>{"item_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+Completed 404 Not Found in 29ms (Views: 0.2ms | ActiveRecord: 3.9ms | Allocations: 8098)
+
+
+Started POST "/inventories" for ::1 at 2020-02-13 09:34:39 -0500
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by InventoriesController#create as */*
+  Parameters: {"item_id"=>1, "inventory"=>{"item_id"=>1}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+Completed 404 Not Found in 46ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 7492)
+
+
+Started POST "/inventories/1" for ::1 at 2020-02-13 09:37:48 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/inventories/1"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/inventories/" for ::1 at 2020-02-13 09:39:44 -0500
+Processing by InventoriesController#create as */*
+  Parameters: {"item_id"=>1, "inventory"=>{"item_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+Completed 404 Not Found in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 738)
+
+
