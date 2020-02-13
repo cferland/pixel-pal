@@ -9,6 +9,7 @@ export const loginUser = async (loginData) => {
   console.log(resp);
   api.defaults.headers.common.authorization = `Bearer ${resp.data.auth_token}`;
   localStorage.setItem('authToken', resp.data.auth_token);
+  localStorage.setItem('userId', resp.data.user.id);
   localStorage.setItem('username', resp.data.user.username);
   localStorage.setItem('email', resp.data.user.email);
   return resp.data.user;
@@ -19,6 +20,7 @@ export const registerUser = async (registerData) => {
     const resp = await api.post('/signup', registerData);
     api.defaults.headers.common.authorization = `Bearer ${resp.data.auth_token}`;
     localStorage.setItem('authToken', resp.data.auth_token);
+    localStorage.setItem('userId', resp.data.user.id);
     localStorage.setItem('username', resp.data.user.username);
     localStorage.setItem('email', resp.data.user.email);
     return resp.data.user;
@@ -47,6 +49,7 @@ export const postAvatar = async (postData) => {
   localStorage.setItem('avatar_base', resp.data.base);
   localStorage.setItem('avatar_hair', resp.data.hair);
   localStorage.setItem('avatar_outfit', resp.data.outfit);
+  localStorage.setItem('avatar_id', resp.data.id);
   return resp.data;
 }
 
@@ -55,18 +58,33 @@ export const loadAvatar = async (id) => {
   localStorage.setItem('avatar_base', resp.data.base);
   localStorage.setItem('avatar_hair', resp.data.hair);
   localStorage.setItem('avatar_outfit', resp.data.outfit);
+  localStorage.setItem('avatar_id', resp.data.id);
   return resp.data;
 }
 
 export const putAvatar = async (id, postData) => {
   const resp = await api.put(`/avatars/${id}`, postData);
-  const avatar = {id: id, base: resp.data.data.base, hair: resp.data.data.hairstyle, outfit: resp.data.data.outfit}
-  return avatar;
+  return resp.data;
 }
 
 export const indexItems = async () => {
   const resp = await api.get('/items');
-  console.log(resp);
+  return resp.data;
+}
+
+export const loadItem = async (id) => {
+  const resp = await api.get(`/items/${id}`);
+  return resp.data;
+}
+
+export const addInventory = async (postData) => {
+  const resp = await api.post('/inventories', postData);
+  console.log(resp.data);
+  return resp.data;
+}
+
+export const loadInventory = async () => {
+  const resp = await api.get('/inventories');
   return resp.data;
 }
 

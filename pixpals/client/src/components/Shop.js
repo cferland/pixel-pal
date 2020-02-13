@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { indexItems } from '../services/api_helper';
+import { indexItems, addInventory } from '../services/api_helper';
 
 export default class Shop extends Component {
   constructor(props) {
@@ -15,6 +15,11 @@ export default class Shop extends Component {
     this.setState({ items });
   }
 
+  buyItem = async (e, item) => {
+    e.preventDefault();
+    await addInventory({ item_id: item.id });
+  }
+
   render() {
     return (
     <div>
@@ -23,6 +28,7 @@ export default class Shop extends Component {
           <img className="shop-item" src={item.image} alt={item.name} />
           <p>{item.name}</p>
           <p>{item.cost}</p>
+          <button onClick={(e) => this.buyItem(e, item)}>Buy</button>
         </div>
       ))}
       </div>

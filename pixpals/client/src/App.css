@@ -3,9 +3,11 @@
 }
 
 .avatar {
-  width: 30%;
+  width: 20%;
   height: 0;
-  padding-bottom: 30%;
+  padding-bottom: 20%;
+  position: absolute;
+  right: 0;
 }
 
 .avatar-base {
@@ -31,7 +33,5 @@
 }
 
 button {
-  position: fixed;
-  top: 0;
   z-index: 99;
 }

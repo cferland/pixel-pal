@@ -8,6 +8,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import Avatar from './components/Avatar';
 import Shop from './components/Shop';
+import Inventory from './components/Inventory';
 
 
 class App extends Component {
@@ -48,11 +49,13 @@ class App extends Component {
       currentUser: null
     })
     localStorage.removeItem('authToken');
+    localStorage.removeItem('userId');
     localStorage.removeItem('username');
     localStorage.removeItem('email');
     localStorage.removeItem('avatar_base');
     localStorage.removeItem('avatar_hair');
     localStorage.removeItem('avatar_outfit');
+    localStorage.removeItem('avatar_id');
   }
 
   componentDidMount() {
@@ -100,6 +103,9 @@ class App extends Component {
         )} />
         <Route path="/shop" render={() => (
           <Shop />
+        )} />
+        <Route path="/inventory" render={() => (
+          <Inventory />
         )} />
       </div>
     );
