@@ -7,8 +7,8 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @avatar.comments.create!(comment_params)
-    json_response(status: 'SUCCESS', message: 'comment created successfully')
+    @comment = @avatar.comments.create!(comment_params)
+    json_response(@comment, :created)
   end
 
   def show

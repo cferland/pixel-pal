@@ -13,6 +13,11 @@ class UsersController < ApplicationController
     json_response(status: 'SUCCESS', message: 'user updated successfully', data: @current_user.currency)
   end
 
+  def show
+    @user = User.find_by_username(params[:id])
+    json_response(@user)
+  end
+
   private
 
   def user_params
