@@ -8,6 +8,11 @@ class UsersController < ApplicationController
     json_response(response, :created)
   end
 
+  def update
+    @current_user.update(user_params)
+    json_response(status: 'SUCCESS', message: 'user updated successfully', data: @current_user.currency)
+  end
+
   private
 
   def user_params

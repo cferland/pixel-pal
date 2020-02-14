@@ -1,4 +1,5 @@
 class AvatarsController < ApplicationController
+  skip_before_action :authorize_request, only: [:show]
   before_action :set_avatar, only: [:show, :update]
 
   def index

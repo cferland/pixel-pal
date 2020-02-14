@@ -9,6 +9,7 @@ import Login from './components/Login';
 import Avatar from './components/Avatar';
 import Shop from './components/Shop';
 import Inventory from './components/Inventory';
+import Profile from './components/Profile';
 
 
 class App extends Component {
@@ -46,12 +47,14 @@ class App extends Component {
 
   handleLogout = () => {
     this.setState({
-      currentUser: null
+      currentUser: null,
+      currentAvatar: null
     })
     localStorage.removeItem('authToken');
     localStorage.removeItem('userId');
     localStorage.removeItem('username');
     localStorage.removeItem('email');
+    localStorage.removeItem('currency');
     localStorage.removeItem('avatar_base');
     localStorage.removeItem('avatar_hair');
     localStorage.removeItem('avatar_outfit');
@@ -116,6 +119,9 @@ class App extends Component {
         )} />
         <Route path="/inventory" render={() => (
           <Inventory avatarRefresh={this.avatarRefresh} />
+        )} />
+        <Route path="/profile/:id" render={(props) => (
+          <Profile profileId={props.match.params.id} />
         )} />
       </div>
     );
