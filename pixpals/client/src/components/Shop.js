@@ -18,12 +18,16 @@ export default class Shop extends Component {
 
   buyItem = async (e, item) => {
     e.preventDefault();
-    let currency = this.state.currency;
-    currency = currency - item.cost;
-    this.setState({ currency });
-    const userId = localStorage.getItem('userId');
-    await setCurrency(userId, currency);
-    await addInventory({ item_id: item.id });
+    if (this.state.currency - item.cost >= 0) {
+      let currency = this.state.currency;
+      currency = currency - item.cost;
+      this.setState({ currency });
+      const userId = localStorage.getItem('userId');
+      await setCurrency(userId, currency);
+      await addInventory({ item_id: item.id });
+    } else {
+      alert("You can't afford that item!");
+    }
   }
 
   render() {

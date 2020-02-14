@@ -4,6 +4,11 @@ const api = axios.create({
   baseURL: "http://localhost:3000"
 })
 
+export const getUser = async (username) => {
+  const resp = await api.get(`/users/${username}`);
+  return resp.data.id;
+}
+
 export const loginUser = async (loginData) => {
   const resp = await api.post('/auth/login', loginData);
   console.log(resp);
@@ -107,6 +112,6 @@ export const indexComments = async (avatarId) => {
 }
 
 export const postComment = async (avatarId, content) => {
-  const resp = await api.post(`/avatars/${avatarId}`, content);
+  const resp = await api.post(`/avatars/${avatarId}/comments`, content);
   return resp.data;
 }

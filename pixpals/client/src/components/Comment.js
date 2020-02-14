@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { verifyUser } from '../services/api_helper';
 
 export default class Comment extends Component {
   constructor(props) {
