@@ -12,6 +12,7 @@ export const loginUser = async (loginData) => {
   localStorage.setItem('userId', resp.data.user.id);
   localStorage.setItem('username', resp.data.user.username);
   localStorage.setItem('email', resp.data.user.email);
+  localStorage.setItem('currency', resp.data.user.currency);
   return resp.data.user;
 }
 
@@ -23,6 +24,7 @@ export const registerUser = async (registerData) => {
     localStorage.setItem('userId', resp.data.user.id);
     localStorage.setItem('username', resp.data.user.username);
     localStorage.setItem('email', resp.data.user.email);
+    localStorage.setItem('currency', resp.data.user.currency);
     return resp.data.user;
   } catch(e) {
     console.log(e.response);
@@ -62,6 +64,11 @@ export const loadAvatar = async (id) => {
   return resp.data;
 }
 
+export const getAvatar = async (id) => {
+  const resp = await api.get(`/avatars/${id}`);
+  return resp.data;
+}
+
 export const putAvatar = async (id, postData) => {
   const resp = await api.put(`/avatars/${id}`, postData);
   return resp.data;
@@ -88,3 +95,18 @@ export const loadInventory = async () => {
   return resp.data;
 }
 
+export const setCurrency = async (id, amount) => {
+  const resp = await api.put(`/users/${id}`, { currency: amount });
+  localStorage.setItem('currency', amount)
+  return resp.data;
+}
+
+export const indexComments = async (avatarId) => {
+  const resp = await api.get(`/avatars/${avatarId}/comments`);
+  return resp.data;
+}
+
+export const postComment = async (avatarId, content) => {
+  const resp = await api.post(`/avatars/${avatarId}`, content);
+  return resp.data;
+}
