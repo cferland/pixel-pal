@@ -20,7 +20,8 @@ export default class Profile extends Component {
     const base = avatar.base;
     const hair = avatar.hair;
     const outfit = avatar.outfit;
-    const currentAvatar = { base, hair, outfit }
+    const avId = avatar.id;
+    const currentAvatar = { base, hair, outfit, avId }
     this.setState({ currentAvatar })
   }
 
@@ -30,7 +31,7 @@ export default class Profile extends Component {
   }
 
   createComment = async (content) => {
-    const newComment = await postComment(this.props.profileId, content);
+    const newComment = await postComment(this.state.currentAvatar.avId, content);
     this.setState({
       comments: [...this.state.comments, newComment]
     })
