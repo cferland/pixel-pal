@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Avatar from './Avatar';
 import Comment from './Comment';
 
-import { getAvatar, indexComments, postComment, verifyUser, getUser } from '../services/api_helper';
+import { getAvatar, indexComments, postComment, verifyUser, getUser, setCurrency } from '../services/api_helper';
 import { Link } from 'react-router-dom';
 
 export default class Profile extends Component {
@@ -11,7 +11,8 @@ export default class Profile extends Component {
 
     this.state = {
       currentAvatar: null,
-      comments: []
+      comments: [],
+      currency: parseInt(localStorage.getItem('currency'))
     }
   }
 
@@ -32,6 +33,15 @@ export default class Profile extends Component {
 
   createComment = async (content) => {
     const newComment = await postComment(this.state.currentAvatar.avId, content);
+    let currency = this.state.currency;
+    let length = content.content.length;
+    let addAmount = Math.floor(Math.random() * (length - 1 + 1)) + 1;
+    console.log(addAmount);
+    currency = currency + addAmount;
+    console.log(currency);
+    this.setState({ currency });
+    const userId = localStorage.getItem('userId');
+    await setCurrency(userId, currency);
     this.setState({
       comments: [...this.state.comments, newComment]
     })
@@ -40,7 +50,6 @@ export default class Profile extends Component {
   componentDidMount = async () => {
     verifyUser();
     const profileId = await getUser(this.props.profileId);
-    console.log(profileId)
     this.setAvatar(profileId);
     this.getComments(profileId);
   }

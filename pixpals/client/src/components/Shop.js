@@ -7,7 +7,7 @@ export default class Shop extends Component {
 
     this.state = {
       items: [],
-      currency: localStorage.getItem('currency')
+      currency: parseInt(localStorage.getItem('currency'))
     }
   }
 

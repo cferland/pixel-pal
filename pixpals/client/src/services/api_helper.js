@@ -100,6 +100,11 @@ export const loadInventory = async () => {
   return resp.data;
 }
 
+export const deleteInventory = async (id) => {
+  const resp = await api.delete(`/inventories/${id}`);
+  return resp.data;
+}
+
 export const setCurrency = async (id, amount) => {
   const resp = await api.put(`/users/${id}`, { currency: amount });
   localStorage.setItem('currency', amount)

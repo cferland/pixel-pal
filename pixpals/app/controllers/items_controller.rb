@@ -24,7 +24,6 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     json_response(status: 'SUCCESS', message: 'deleted the item', data: @item.name)
-
   end
 
   private

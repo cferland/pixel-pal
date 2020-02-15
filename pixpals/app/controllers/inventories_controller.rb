@@ -10,6 +10,12 @@ class InventoriesController < ApplicationController
     json_response(@inventories)
   end
 
+  def destroy
+    @inventory = Inventory.find(params[:id])
+    @inventory.destroy
+    json_response(status: 'SUCCESS', message: 'deleted the inventory', data: @inventory.id)
+  end
+
   private
 
   def inv_params
