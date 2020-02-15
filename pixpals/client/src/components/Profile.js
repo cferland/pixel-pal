@@ -77,6 +77,12 @@ export default class Profile extends Component {
             <div key={comment.id}>
               <h4><Link to={`/profile/${comment.created_by}`}>{comment.created_by}</Link></h4>
               <p>{comment.content}</p>
+              {comment.created_by === localStorage.getItem('username') || this.state.currentAvatar.avId === localStorage.getItem('userId') ?
+                (
+                  <button>
+                    Delete
+                  </button>
+                ) : ''}
             </div>
           ))}
         </div>
