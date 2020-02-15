@@ -10,6 +10,7 @@ import Avatar from './components/Avatar';
 import Shop from './components/Shop';
 import Inventory from './components/Inventory';
 import Profile from './components/Profile';
+import Gallery from './components/Gallery';
 
 
 class App extends Component {
@@ -122,6 +123,9 @@ class App extends Component {
         )} />
         <Route path="/profile/:id" render={(props) => (
           <Profile profileId={props.match.params.id} />
+        )} />
+        <Route path="/gallery" render={() => (
+          <Gallery />
         )} />
       </div>
     );

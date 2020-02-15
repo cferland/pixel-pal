@@ -1,10 +1,10 @@
 class AvatarsController < ApplicationController
-  skip_before_action :authorize_request, only: [:show]
+  skip_before_action :authorize_request, only: [:show, :index]
   before_action :set_avatar, only: [:show, :update]
 
   def index
-    @avatar = current_user.avatar
-    json_response(@avatar)
+    @avatars = Avatar.all
+    json_response(@avatars)
   end
 
   def create
