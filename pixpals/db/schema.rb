@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_154208) do
+ActiveRecord::Schema.define(version: 2020_02_15_132546) do
 
   create_table "avatars", force: :cascade do |t|
     t.string "base"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_154208) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
     t.index ["user_id"], name: "index_avatars_on_user_id"
   end
 

@@ -24,8 +24,8 @@ class AvatarsController < ApplicationController
   private
 
   def avatar_params
-    params.permit(:base, :hair, :outfit, :user_id)
-        .with_defaults(user_id: current_user.id)
+    params.permit(:base, :hair, :outfit, :username, :user_id)
+        .with_defaults(username: current_user.username, user_id: current_user.id)
   end
 
   def set_avatar
