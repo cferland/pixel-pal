@@ -6,7 +6,7 @@ import './App.css';
 
 import Register from './components/Register';
 import Login from './components/Login';
-import Avatar from './components/Avatar';
+import Header from './components/Header';
 import Shop from './components/Shop';
 import Inventory from './components/Inventory';
 import Profile from './components/Profile';
@@ -94,7 +94,7 @@ class App extends Component {
       <div className="App">
         {this.state.currentUser ?
           <div>
-            <Avatar currentAvatar={this.state.currentAvatar} />
+            <Header currentAvatar={this.state.currentAvatar} />
             <h1>Hello, {this.state.currentUser.username}</h1>
             <button onClick={this.handleLogout}>Logout</button>
           </div>
