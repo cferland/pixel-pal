@@ -94,8 +94,7 @@ class App extends Component {
       <div className="App">
         {this.state.currentUser ?
           <div>
-            <Header currentAvatar={this.state.currentAvatar} />
-            <h1>Hello, {this.state.currentUser.username}</h1>
+            <Header currentUser={this.state.currentUser} currentAvatar={this.state.currentAvatar} />
             <button onClick={this.handleLogout}>Logout</button>
           </div>
           :

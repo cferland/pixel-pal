@@ -120,3 +120,8 @@ export const postComment = async (avatarId, content) => {
   const resp = await api.post(`/avatars/${avatarId}/comments`, content);
   return resp.data;
 }
+
+export const deleteComment = async (avatarId, commentId) => {
+  const resp = await api.delete(`/avatars/${avatarId}/comments/${commentId}`);
+  return resp.data;
+}
