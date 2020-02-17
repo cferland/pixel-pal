@@ -10,6 +10,9 @@ header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  background-image: url('/images/sky-bg.png');
+  background-size: 262px;
+  background-repeat: repeat-x;
 }
 
 .user-box {
