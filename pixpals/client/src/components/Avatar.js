@@ -5,15 +5,12 @@ export default class Avatar extends Component{
     super(props);
 
     this.state = {
-      base: '',
-      hair: '',
-      outfit: ''
+      
     }
   }
 
   render() {
     return (
-      <div>
         <div className="avatar">
           <img className="avatar-base" src={this.props.currentAvatar.base} alt="avatar" />
           {this.props.currentAvatar.outfit &&
@@ -23,7 +20,6 @@ export default class Avatar extends Component{
             <img className="avatar-hair" src={this.props.currentAvatar.hair} alt="avatar" />
           }
         </div>
-      </div>
     )
   }
 }
