@@ -73,11 +73,13 @@ export default class Profile extends Component {
   render() {
     return (
       <div className="profile">
-        <div className="profile-avatar">
-        <h1>{this.props.profileId}</h1>
-          {this.state.currentAvatar &&
-            <Avatar currentAvatar={this.state.currentAvatar} />
-          }
+        <div>
+          <h1>{this.props.profileId}</h1>
+          <div className="profile-avatar">
+            {this.state.currentAvatar &&
+              <Avatar currentAvatar={this.state.currentAvatar} />
+            }
+          </div>
         </div>
         <div className="comments">
           <h2>Comments</h2>
@@ -93,9 +95,9 @@ export default class Profile extends Component {
                 ) : ''}
             </div>
           ))}
-        </div>
-        <div>
-          <Comment createComment={this.createComment} />
+          <div>
+            <Comment createComment={this.createComment} />
+          </div>
         </div>
       </div>
     )

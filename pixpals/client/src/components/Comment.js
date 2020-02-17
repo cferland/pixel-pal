@@ -20,12 +20,12 @@ export default class Comment extends Component {
         e.preventDefault();
         this.props.createComment(this.state)
       }}>
-        <label htmlFor="content">Comment</label>
         <input
           type="text"
           name="content"
           value={this.state.content}
           onChange={this.handleChange}
+          placeholder="Enter a comment"
         />
         <button>Submit</button>
       </form>
