@@ -73,7 +73,7 @@ export default class Inventory extends Component {
     return (
       <div className="inventory">
         {this.state.items.map((item) => (
-          <div key={item.invId}>
+          <div className="inv-card" key={item.invId}>
             <img className="inv-item" src={item.image} alt={item.name} />
             <p>{item.name}</p>
             <button onClick={(e) => this.equipItem(e, item)}>Equip</button>

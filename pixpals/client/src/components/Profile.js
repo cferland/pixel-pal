@@ -72,13 +72,15 @@ export default class Profile extends Component {
 
   render() {
     return (
-      <div>
+      <div className="profile">
         <div className="profile-avatar">
+        <h1>{this.props.profileId}</h1>
           {this.state.currentAvatar &&
             <Avatar currentAvatar={this.state.currentAvatar} />
           }
         </div>
         <div className="comments">
+          <h2>Comments</h2>
           {this.state.comments && this.state.comments.map(comment => (
             <div key={comment.id}>
               <h4><Link to={`/profile/${comment.created_by}`}>{comment.created_by}</Link></h4>
