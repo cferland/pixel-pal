@@ -95,7 +95,7 @@ class App extends Component {
         {this.state.currentUser ?
           <div>
             <Header currentUser={this.state.currentUser} currentAvatar={this.state.currentAvatar} />
-            <button onClick={this.handleLogout}>Logout</button>
+            <button className="logout" onClick={this.handleLogout}>Logout</button>
           </div>
           :
           <nav>
@@ -125,6 +125,18 @@ class App extends Component {
         )} />
         <Route path="/gallery" render={() => (
           <Gallery />
+        )} />
+        <Route exact path="/" render={() => (
+          <div className="landing">
+            <h1>Welcome to Pixel Pals!</h1>
+            <p>
+              Pixel Pals is an online social network where each user has their own avatar, 
+              or "Pixel Pal", which can be customized with various items.
+              This allows users to express themselves in creative new ways while viewing and commenting on
+              other Pixel Pal profiles!
+              New items can be purchased with "Pixels," a virtual currency earned with each comment you make.
+            </p>
+          </div>
         )} />
       </div>
     );
