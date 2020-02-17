@@ -35764,3 +35764,129 @@ Processing by AvatarsController#index as HTML
 Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 1.5ms | Allocations: 939)
 
 
+Started GET "/avatars" for ::1 at 2020-02-17 14:20:57 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AvatarsController#index as HTML
+  [1m[36mAvatar Load (0.5ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 28ms (Views: 19.5ms | ActiveRecord: 1.2ms | Allocations: 6990)
+
+
+Started GET "/avatars" for ::1 at 2020-02-17 14:21:03 -0500
+Processing by AvatarsController#index as HTML
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 934)
+
+
+Started GET "/avatars" for ::1 at 2020-02-17 14:23:18 -0500
+Processing by AvatarsController#index as HTML
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 934)
+
+
+Started GET "/avatars" for ::1 at 2020-02-17 14:24:23 -0500
+Processing by AvatarsController#index as HTML
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 934)
+
+
+Started GET "/users/cor" for ::1 at 2020-02-17 14:26:39 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"cor"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 33ms (Views: 0.4ms | ActiveRecord: 2.1ms | Allocations: 7916)
+
+
+Started GET "/avatars/1" for ::1 at 2020-02-17 14:26:39 -0500
+Started GET "/avatars/1/comments" for ::1 at 2020-02-17 14:26:39 -0500
+Processing by AvatarsController#show as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  Parameters: {"id"=>"1"}
+  [1m[36mAvatar Load (0.3ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Processing by CommentsController#index as HTML
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+  Parameters: {"avatar_id"=>"1"}
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 1772)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (1.3ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:36:in `set_avatar'
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."avatar_id" = ?[0m  [["avatar_id", 1]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 45ms (Views: 21.6ms | ActiveRecord: 3.4ms | Allocations: 8183)
+
+
+Started GET "/avatars" for ::1 at 2020-02-17 14:26:43 -0500
+Processing by AvatarsController#index as HTML
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms | Allocations: 940)
+
+
+Started GET "/items" for ::1 at 2020-02-17 14:26:44 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 26ms (Views: 17.3ms | ActiveRecord: 1.1ms | Allocations: 5780)
+
+
+Started GET "/inventories" for ::1 at 2020-02-17 14:26:46 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mInventory Load (0.7ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 23ms (Views: 17.0ms | ActiveRecord: 1.6ms | Allocations: 5364)
+
+
+Started GET "/items/5" for ::1 at 2020-02-17 14:26:46 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"5"}
+Started GET "/items/1" for ::1 at 2020-02-17 14:26:46 -0500
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Started GET "/items/2" for ::1 at 2020-02-17 14:26:46 -0500
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1497)
+
+
+Started GET "/items/4" for ::1 at 2020-02-17 14:26:46 -0500
+Started GET "/items/3" for ::1 at 2020-02-17 14:26:46 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ItemsController#show as HTML
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Parameters: {"id"=>"3"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 2206)
+
+
+Completed 200 OK in 24ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 2341)
+
+
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 1586)
+
+
+Completed 200 OK in 23ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 2342)
+
+

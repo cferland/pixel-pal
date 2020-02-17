@@ -174,3 +174,19 @@ button {
   margin-right: 5px;
   width: 75%;
 }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 210px);
+  justify-content: space-evenly;
+}
+
+.gallery h3 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.gallery-card {
+  width: 230px;
+  text-align: center;
+}

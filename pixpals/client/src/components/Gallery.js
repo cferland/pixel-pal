@@ -27,7 +27,7 @@ export default class Gallery extends Component{
       <div>
         <div className="gallery">
           {this.state.avatars && this.state.avatars.map(avatar => (
-            <div key={avatar.id}>
+            <div className="gallery-card" key={avatar.id}>
               <Avatar currentAvatar={avatar} />
               <Link to={`/profile/${avatar.username}`} ><h3>{avatar.username}</h3></Link>
             </div>
