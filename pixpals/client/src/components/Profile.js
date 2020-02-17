@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Avatar from './Avatar';
 import Comment from './Comment';
 
-import { getAvatar, indexComments, postComment, verifyUser, getUser, setCurrency } from '../services/api_helper';
+import { getAvatar, indexComments, postComment, verifyUser, getUser, setCurrency, deleteComment } from '../services/api_helper';
 import { Link } from 'react-router-dom';
 
 export default class Profile extends Component {
@@ -47,6 +47,12 @@ export default class Profile extends Component {
     })
   }
 
+  deleteComment = async (e, avId, commentId) => {
+    e.preventDefault();
+    await deleteComment(avId, commentId);
+    this.getComments(avId);
+  }
+
   componentDidMount = async () => {
     verifyUser();
     const profileId = await getUser(this.props.profileId);
@@ -79,7 +85,7 @@ export default class Profile extends Component {
               <p>{comment.content}</p>
               {comment.created_by === localStorage.getItem('username') || this.state.currentAvatar.avId === localStorage.getItem('userId') ?
                 (
-                  <button>
+                  <button onClick={(e) => this.deleteComment(e, this.state.currentAvatar.avId, comment.id)}>
                     Delete
                   </button>
                 ) : ''}
