@@ -32,13 +32,12 @@ export default class Shop extends Component {
 
   render() {
     return (
-      <div>
-        <p>{this.state.currency}</p>
+      <div className="shop">
       {this.state.items && this.state.items.map(item => (
-        <div key={item.id}>
+        <div className="shop-card" key={item.id}>
           <img className="shop-item" src={item.image} alt={item.name} />
           <p>{item.name}</p>
-          <p>{item.cost}</p>
+          <p className="price">{item.cost} Pixels</p>
           <button onClick={(e) => this.buyItem(e, item)}>Buy</button>
         </div>
       ))}

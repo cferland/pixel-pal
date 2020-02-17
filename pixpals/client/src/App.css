@@ -84,10 +84,6 @@ a:hover {
   z-index: 3;
 }
 
-.shop-item {
-  width: 20%;
-}
-
 .inventory {
   display: grid;
   grid-template-columns: repeat(auto-fill, 210px);
@@ -96,11 +92,9 @@ a:hover {
 
 .inv-item {
   width: 160px;
-  border: 1px solid #ccc;
-}
-
-.inv-item:hover {
-  background-color: #ccc;
+  border: 2px solid #333;
+  box-shadow: 3px 3px #333;
+  border-radius: 15px;
 }
 
 .inv-card {
@@ -111,6 +105,30 @@ a:hover {
 
 .inv-card p {
   font-weight: bold;
+}
+
+.shop {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 210px);
+  justify-content: space-evenly;
+}
+
+.shop-item {
+  width: 160px;
+  border: 2px solid #333;
+  box-shadow: 3px 3px #333;
+  border-radius: 15px;
+}
+
+.shop-card {
+  text-align: center;
+  padding-bottom: 10px;
+  margin: 20px;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 14px;
 }
 
 button {

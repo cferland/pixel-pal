@@ -31,7 +31,7 @@ export default class Header extends Component {
             <Avatar currentAvatar={this.props.currentAvatar} />
           </div>
           <div className="stats">
-            <h2>{this.props.currentUser.username}</h2>
+            <Link to={`/profile/${this.props.currentUser.username}`}><h2>{this.props.currentUser.username}</h2></Link>
             <h4>{this.state.currency} Pixels</h4>
           </div>
         </div>
