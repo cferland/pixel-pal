@@ -9,7 +9,7 @@ export default class Gallery extends Component{
     super(props);
 
     this.state = {
-      avatars: []
+      avatars: null
     }
   }
 
@@ -26,7 +26,7 @@ export default class Gallery extends Component{
     return (
       <div>
         <div className="gallery">
-          {this.state.avatars.length && this.state.avatars.map(avatar => (
+          {this.state.avatars && this.state.avatars.map(avatar => (
             <div key={avatar.id}>
               <Avatar currentAvatar={avatar} />
               <Link to={`/profile/${avatar.username}`} ><h3>{avatar.username}</h3></Link>
