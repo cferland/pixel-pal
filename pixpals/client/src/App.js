@@ -30,8 +30,8 @@ class App extends Component {
   handleRegister = async (e, registerData) => {
     e.preventDefault();
     const currentUser = await registerUser(registerData);
-    const currentAvatar = await postAvatar({ base: "/images/bases/base_light.png", hair: "", outfit: "/images/outfits/casual_pink.png" });
     if (!currentUser.errorMessage) {
+      const currentAvatar = await postAvatar({ base: "/images/bases/base_light.png", hair: "", outfit: "/images/outfits/casual_pink.png" });
       this.setState({ currentUser, currentAvatar });
     } else {
       this.setState({ errorText: currentUser.errorMessage })
@@ -41,9 +41,13 @@ class App extends Component {
   handleLogin = async (e, loginData) => {
     e.preventDefault();
     const currentUser = await loginUser(loginData);
-    console.log(currentUser)
-    const currentAvatar = await loadAvatar(currentUser.id);
-    this.setState({ currentUser, currentAvatar });
+    if (!currentUser.errorMessage) {
+      console.log(currentUser)
+      const currentAvatar = await loadAvatar(currentUser.id);
+      this.setState({ currentUser, currentAvatar });
+    } else {
+      this.setState({ errorText: currentUser.errorMessage })
+    }
   }
 
   handleLogout = () => {
@@ -98,20 +102,23 @@ class App extends Component {
             <button className="logout" onClick={this.handleLogout}>Logout</button>
           </div>
           :
-          <nav>
-            <Link to="/register"><button>Register</button></Link>
-            <Link to="/login"><button>Login</button></Link>
+          <nav className="container">
+            <Link to="/register"><button className="register">Register</button></Link>
+            <Link to="/login"><button className="logout">Login</button></Link>
           </nav>
         }
         <Route path="/login" render={() => (
           <Login
             handleLogin={this.handleLogin}
+            errorText={this.state.errorText}
+            currentUser={this.state.currentUser}
           />
         )} />
         <Route path="/register" render={() => (
           <Register
             handleRegister={this.handleRegister}
             errorText={this.state.errorText}
+            currentUser={this.state.currentUser}
           />
         )} />
         <Route path="/shop" render={() => (
@@ -134,7 +141,13 @@ class App extends Component {
               or "Pixel Pal", which can be customized with various items.
               This allows users to express themselves in creative new ways while viewing and commenting on
               other Pixel Pal profiles!
-              New items can be purchased with "Pixels," a virtual currency earned with each comment you make.
+            </p>
+            <p>
+              To get started, sign in and visit the gallery to see a list of profiles, 
+              then comment on different profiles to start earning pixels, a virtual currency that can be used 
+              to purchase new items for your Pixel Pal! Once you've earned some pixels, head to the shop and buy 
+              something you like - then head to your inventory to equip it. From there, you can sell any items you
+              no longer want. Now other users will be able to see your great new Pixel Pal! 
             </p>
           </div>
         )} />
