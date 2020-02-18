@@ -35987,3 +35987,1492 @@ Processing by AvatarsController#index as HTML
 Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 939)
 
 
+Started GET "/inventories" for ::1 at 2020-02-18 09:09:40 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mInventory Load (3.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 171ms (Views: 18.8ms | ActiveRecord: 8.8ms | Allocations: 14641)
+
+
+Started GET "/items/5" for ::1 at 2020-02-18 09:09:41 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"5"}
+Started GET "/items/3" for ::1 at 2020-02-18 09:09:41 -0500
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/items/1" for ::1 at 2020-02-18 09:09:41 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/items/2" for ::1 at 2020-02-18 09:09:41 -0500
+Started GET "/items/4" for ::1 at 2020-02-18 09:09:41 -0500
+Completed 200 OK in 38ms (Views: 0.5ms | ActiveRecord: 2.6ms | Allocations: 7617)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ItemsController#show as HTML
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"2"}
+Processing by ItemsController#show as HTML
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 6363)
+
+
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"4"}
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1165)
+
+
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1611)
+
+
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 1788)
+
+
+Started PUT "/avatars/1" for ::1 at 2020-02-18 09:10:00 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"hair"=>"/images/hairstyles/buzz_yellow.png", "id"=>"1", "avatar"=>{"hair"=>"/images/hairstyles/buzz_yellow.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.8ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:20:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:20:in `update'
+  [1m[36mAvatar Update (2.6ms)[0m  [1m[33mUPDATE "avatars" SET "hair" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["hair", "/images/hairstyles/buzz_yellow.png"], ["updated_at", "2020-02-18 14:10:00.378716"], ["id", 1]]
+  ↳ app/controllers/avatars_controller.rb:20:in `update'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:20:in `update'
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 5.3ms | Allocations: 8650)
+
+
+Started GET "/avatars/1" for ::1 at 2020-02-18 09:10:00 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 726)
+
+
+Started PUT "/avatars/1" for ::1 at 2020-02-18 09:10:03 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/vamp_purple.png", "id"=>"1", "avatar"=>{"outfit"=>"/images/outfits/vamp_purple.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:20:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:20:in `update'
+  [1m[36mAvatar Update (1.1ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/vamp_purple.png"], ["updated_at", "2020-02-18 14:10:03.098141"], ["id", 1]]
+  ↳ app/controllers/avatars_controller.rb:20:in `update'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:20:in `update'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 3.2ms | Allocations: 4375)
+
+
+Started GET "/avatars/1" for ::1 at 2020-02-18 09:10:03 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 720)
+
+
+Started GET "/items" for ::1 at 2020-02-18 09:10:07 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.2ms | Allocations: 1584)
+
+
+Started GET "/avatars" for ::1 at 2020-02-18 09:10:16 -0500
+Processing by AvatarsController#index as HTML
+  [1m[36mAvatar Load (0.3ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 941)
+
+
+Started GET "/items" for ::1 at 2020-02-18 09:10:20 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 1564)
+
+
+Started GET "/inventories" for ::1 at 2020-02-18 09:11:16 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mInventory Load (1.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 1.3ms | Allocations: 2053)
+
+
+Started GET "/items/5" for ::1 at 2020-02-18 09:11:17 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 697)
+
+
+Started GET "/items/3" for ::1 at 2020-02-18 09:11:17 -0500
+Started GET "/items/1" for ::1 at 2020-02-18 09:11:17 -0500
+Processing by ItemsController#show as HTML
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"3"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mItem Load (1.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 1111)
+
+
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 1.6ms | Allocations: 1438)
+
+
+Started GET "/items/4" for ::1 at 2020-02-18 09:11:17 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 688)
+
+
+Started GET "/items/2" for ::1 at 2020-02-18 09:11:17 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 688)
+
+
+Started PUT "/avatars/1" for ::1 at 2020-02-18 09:11:21 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"outfit"=>"/images/outfits/casual_pink.png", "id"=>"1", "avatar"=>{"outfit"=>"/images/outfits/casual_pink.png"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:20:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:20:in `update'
+  [1m[36mAvatar Update (0.5ms)[0m  [1m[33mUPDATE "avatars" SET "outfit" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["outfit", "/images/outfits/casual_pink.png"], ["updated_at", "2020-02-18 14:11:21.132057"], ["id", 1]]
+  ↳ app/controllers/avatars_controller.rb:20:in `update'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:20:in `update'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 4410)
+
+
+Started GET "/avatars/1" for ::1 at 2020-02-18 09:11:21 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvatar Load (0.3ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 720)
+
+
+Started GET "/users/cor" for ::1 at 2020-02-18 09:11:27 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"cor"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1514)
+
+
+Started GET "/avatars/1" for ::1 at 2020-02-18 09:11:27 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvatar Load (0.4ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 723)
+
+
+Started GET "/avatars/1/comments" for ::1 at 2020-02-18 09:11:27 -0500
+Processing by CommentsController#index as HTML
+  Parameters: {"avatar_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:36:in `set_avatar'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."avatar_id" = ?[0m  [["avatar_id", 1]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 38ms (Views: 31.2ms | ActiveRecord: 2.4ms | Allocations: 6250)
+
+
+Started POST "/auth/login" for ::1 at 2020-02-18 09:43:58 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"cor@cor.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"cor@cor.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+Completed 401 Unauthorized in 285ms (Views: 1.0ms | ActiveRecord: 0.6ms | Allocations: 1047)
+
+
+Started POST "/auth/login" for ::1 at 2020-02-18 09:44:04 -0500
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"cor@cor.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"cor@cor.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `authenticate'
+Completed 200 OK in 546ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 1875)
+
+
+Started GET "/avatars/1" for ::1 at 2020-02-18 09:44:04 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvatar Load (1.0ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 1.0ms | Allocations: 741)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 09:57:18 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"cor", "email"=>"cor@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"cor", "email"=>"cor@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 422 Unprocessable Entity in 306ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 5348)
+
+
+Started POST "/avatars" for ::1 at 2020-02-18 09:57:18 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+Completed 422 Unprocessable Entity in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 09:57:29 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"cor", "email"=>"cor@cor.com", "password"=>"[FILTERED]", "user"=>{"username"=>"cor", "email"=>"cor@cor.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 422 Unprocessable Entity in 292ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 4387)
+
+
+Started POST "/avatars" for ::1 at 2020-02-18 09:57:29 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+Completed 422 Unprocessable Entity in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 09:57:54 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"cor", "email"=>"cor@cor.com", "password"=>"[FILTERED]", "user"=>{"username"=>"cor", "email"=>"cor@cor.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 422 Unprocessable Entity in 271ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 4341)
+
+
+Started POST "/avatars" for ::1 at 2020-02-18 09:57:55 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+Completed 422 Unprocessable Entity in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 09:59:15 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"corey", "email"=>"cor@cor.com", "password"=>"[FILTERED]", "user"=>{"username"=>"corey", "email"=>"cor@cor.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "corey"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 422 Unprocessable Entity in 273ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 3942)
+
+
+Started POST "/avatars" for ::1 at 2020-02-18 09:59:15 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+Completed 422 Unprocessable Entity in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 10:08:10 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"cor", "email"=>"cor@cor.com", "password"=>"[FILTERED]", "user"=>{"username"=>"cor", "email"=>"cor@cor.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 422 Unprocessable Entity in 287ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 4341)
+
+
+Started POST "/avatars" for ::1 at 2020-02-18 10:08:10 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 10:10:21 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"cor", "email"=>"cor@cor.com", "password"=>"[FILTERED]", "user"=>{"username"=>"cor", "email"=>"cor@cor.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 422 Unprocessable Entity in 288ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 4339)
+
+
+Started POST "/avatars" for ::1 at 2020-02-18 10:10:21 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+Completed 422 Unprocessable Entity in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 10:12:22 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"cor", "email"=>"cor@cor.com", "password"=>"[FILTERED]", "user"=>{"username"=>"cor", "email"=>"cor@cor.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 422 Unprocessable Entity in 302ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 4342)
+
+
+Started POST "/avatars" for ::1 at 2020-02-18 10:12:22 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 10:13:12 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"cor", "email"=>"cor@cor.com", "password"=>"[FILTERED]", "user"=>{"username"=>"cor", "email"=>"cor@cor.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 422 Unprocessable Entity in 280ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 4339)
+
+
+Started POST "/avatars" for ::1 at 2020-02-18 10:13:13 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 10:17:30 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"cor", "email"=>"cor@cor.com", "password"=>"[FILTERED]", "user"=>{"username"=>"cor", "email"=>"cor@cor.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 422 Unprocessable Entity in 339ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 4339)
+
+
+Started POST "/avatars" for ::1 at 2020-02-18 10:17:30 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+Completed 422 Unprocessable Entity in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 10:18:42 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"cor", "email"=>"cor@cor.com", "password"=>"[FILTERED]", "user"=>{"username"=>"cor", "email"=>"cor@cor.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 422 Unprocessable Entity in 314ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 4338)
+
+
+Started POST "/avatars" for ::1 at 2020-02-18 10:18:42 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 10:19:55 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"cor", "email"=>"cor@cor.com", "password"=>"[FILTERED]", "user"=>{"username"=>"cor", "email"=>"cor@cor.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 422 Unprocessable Entity in 301ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 4339)
+
+
+Started POST "/avatars" for ::1 at 2020-02-18 10:19:56 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+Completed 422 Unprocessable Entity in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 10:23:14 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"cor", "email"=>"cor@cor.com", "password"=>"[FILTERED]", "user"=>{"username"=>"cor", "email"=>"cor@cor.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 422 Unprocessable Entity in 317ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 4342)
+
+
+Started POST "/avatars" for ::1 at 2020-02-18 10:23:14 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+Completed 422 Unprocessable Entity in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 10:25:13 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"cor", "email"=>"cor@cor.com", "password"=>"[FILTERED]", "user"=>{"username"=>"cor", "email"=>"cor@cor.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 422 Unprocessable Entity in 281ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 4343)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 10:26:17 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"cor", "email"=>"ferlandc@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"cor", "email"=>"ferlandc@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ferlandc@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 422 Unprocessable Entity in 276ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 3940)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 10:30:41 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"Corey", "email"=>"ferlandc@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Corey", "email"=>"ferlandc@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Corey"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ferlandc@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (2.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "currency", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "Corey"], ["email", "ferlandc@gmail.com"], ["password_digest", "$2a$12$ri5djYL3H0wuO0t4roJFSeBgFofZe.nbq1Muyi1m7mTfpTSZD3k8G"], ["currency", 100], ["created_at", "2020-02-18 15:30:41.841384"], ["updated_at", "2020-02-18 15:30:41.841384"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ferlandc@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ferlandc@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+Completed 201 Created in 831ms (Views: 1.0ms | ActiveRecord: 4.6ms | Allocations: 6278)
+
+
+Started POST "/avatars" for ::1 at 2020-02-18 10:30:42 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameter: :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:11:in `create'
+  [1m[36mAvatar Create (0.9ms)[0m  [1m[32mINSERT INTO "avatars" ("base", "hair", "outfit", "user_id", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["base", "/images/bases/base_light.png"], ["hair", ""], ["outfit", "/images/outfits/casual_pink.png"], ["user_id", 2], ["created_at", "2020-02-18 15:30:42.452751"], ["updated_at", "2020-02-18 15:30:42.452751"], ["username", "Corey"]]
+  ↳ app/controllers/avatars_controller.rb:11:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:11:in `create'
+Completed 201 Created in 19ms (Views: 0.5ms | ActiveRecord: 2.5ms | Allocations: 3925)
+
+
+Started GET "/users/undefined" for ::1 at 2020-02-18 10:34:27 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "undefined"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.6ms | Allocations: 1177)
+
+
+Started GET "/users/undefined" for ::1 at 2020-02-18 10:34:46 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "undefined"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1158)
+
+
+Started GET "/users/undefined" for ::1 at 2020-02-18 10:34:51 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "undefined"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1157)
+
+
+Started GET "/users/undefined" for ::1 at 2020-02-18 10:34:58 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "undefined"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1157)
+
+
+Started GET "/users/undefined" for ::1 at 2020-02-18 10:35:19 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "undefined"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1157)
+
+
+Started GET "/users/undefined" for ::1 at 2020-02-18 10:35:28 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "undefined"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 1157)
+
+
+Started GET "/users/undefined" for ::1 at 2020-02-18 10:35:44 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "undefined"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1157)
+
+
+Started GET "/users/undefined" for ::1 at 2020-02-18 10:36:03 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "undefined"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1157)
+
+
+Started GET "/avatars" for ::1 at 2020-02-18 10:36:56 -0500
+Processing by AvatarsController#index as HTML
+  [1m[36mAvatar Load (0.6ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.6ms | Allocations: 1101)
+
+
+Started GET "/items" for ::1 at 2020-02-18 10:37:01 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.4ms | Allocations: 1579)
+
+
+Started GET "/inventories" for ::1 at 2020-02-18 10:37:04 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 0.5ms | Allocations: 1452)
+
+
+Started GET "/avatars" for ::1 at 2020-02-18 10:37:08 -0500
+Processing by AvatarsController#index as HTML
+  [1m[36mAvatar Load (0.3ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 1080)
+
+
+Started GET "/users/cor" for ::1 at 2020-02-18 10:37:10 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"cor"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1304)
+
+
+Started GET "/avatars/1/comments" for ::1 at 2020-02-18 10:37:10 -0500
+Started GET "/avatars/1" for ::1 at 2020-02-18 10:37:10 -0500
+Processing by CommentsController#index as HTML
+  Parameters: {"avatar_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+Processing by AvatarsController#show as HTML
+  [1m[36mAvatar Load (0.4ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"id"=>"1"}
+  ↳ app/controllers/comments_controller.rb:36:in `set_avatar'
+  [1m[36mAvatar Load (1.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."avatar_id" = ?[0m  [["avatar_id", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 1588)
+
+
+Completed 200 OK in 19ms (Views: 7.4ms | ActiveRecord: 1.1ms | Allocations: 3625)
+
+
+Started POST "/avatars/1/comments" for ::1 at 2020-02-18 10:37:20 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"content"=>"lookin good!", "avatar_id"=>"1", "comment"=>{"content"=>"lookin good!"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:36:in `set_avatar'
+[31mUnpermitted parameters: :avatar_id, :comment[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[36mComment Create (1.7ms)[0m  [1m[32mINSERT INTO "comments" ("content", "created_by", "avatar_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "lookin good!"], ["created_by", "Corey"], ["avatar_id", 1], ["created_at", "2020-02-18 15:37:20.295968"], ["updated_at", "2020-02-18 15:37:20.295968"]]
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+Completed 201 Created in 21ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 3819)
+
+
+Started PUT "/users/2" for ::1 at 2020-02-18 10:37:20 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"currency"=>110, "id"=>"2", "user"=>{"currency"=>110}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Corey"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "ferlandc@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "currency" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["currency", 110], ["updated_at", "2020-02-18 15:37:20.355785"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 5104)
+
+
+Started POST "/avatars/1/comments" for ::1 at 2020-02-18 10:38:00 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"content"=>"seriously love ur avi so much u stupid fucking bitch i hope u die i hate u so much balh balah baalfh aodhf fucccckkkkkkkkk fuuuuuuckkkk uuuuuuuuuuuuuu", "avatar_id"=>"1", "comment"=>{"content"=>"seriously love ur avi so much u stupid fucking bitch i hope u die i hate u so much balh balah baalfh aodhf fucccckkkkkkkkk fuuuuuuckkkk uuuuuuuuuuuuuu"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:36:in `set_avatar'
+[31mUnpermitted parameters: :avatar_id, :comment[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "created_by", "avatar_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "seriously love ur avi so much u stupid fucking bitch i hope u die i hate u so much balh balah baalfh aodhf fucccckkkkkkkkk fuuuuuuckkkk uuuuuuuuuuuuuu"], ["created_by", "Corey"], ["avatar_id", 1], ["created_at", "2020-02-18 15:38:00.541913"], ["updated_at", "2020-02-18 15:38:00.541913"]]
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+Completed 201 Created in 13ms (Views: 0.6ms | ActiveRecord: 2.1ms | Allocations: 3748)
+
+
+Started PUT "/users/2" for ::1 at 2020-02-18 10:38:00 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"currency"=>175, "id"=>"2", "user"=>{"currency"=>175}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Corey"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "ferlandc@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "currency" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["currency", 175], ["updated_at", "2020-02-18 15:38:00.588388"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 5041)
+
+
+Started POST "/avatars/1/comments" for ::1 at 2020-02-18 10:38:04 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"content"=>"seriously love ur avi so much u stupid fucking bitch i hope u die i hate u so much balh balah baalfh aodhf fucccckkkkkkkkk fuuuuuuckkkk uuuuuuuuuuuuuu", "avatar_id"=>"1", "comment"=>{"content"=>"seriously love ur avi so much u stupid fucking bitch i hope u die i hate u so much balh balah baalfh aodhf fucccckkkkkkkkk fuuuuuuckkkk uuuuuuuuuuuuuu"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:36:in `set_avatar'
+[31mUnpermitted parameters: :avatar_id, :comment[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "created_by", "avatar_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "seriously love ur avi so much u stupid fucking bitch i hope u die i hate u so much balh balah baalfh aodhf fucccckkkkkkkkk fuuuuuuckkkk uuuuuuuuuuuuuu"], ["created_by", "Corey"], ["avatar_id", 1], ["created_at", "2020-02-18 15:38:04.246499"], ["updated_at", "2020-02-18 15:38:04.246499"]]
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+Completed 201 Created in 14ms (Views: 0.3ms | ActiveRecord: 3.6ms | Allocations: 3749)
+
+
+Started PUT "/users/2" for ::1 at 2020-02-18 10:38:04 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"currency"=>239, "id"=>"2", "user"=>{"currency"=>239}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Corey"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "ferlandc@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "currency" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["currency", 239], ["updated_at", "2020-02-18 15:38:04.288457"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 5040)
+
+
+Started POST "/avatars/1/comments" for ::1 at 2020-02-18 10:38:11 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"content"=>"seriously love ur avi so much u stupid fucking bitch i hope u die i hate u so much balh balah baalfh aodhf fucccckkkkkkkkk fuuuuuuckkkk uuuuuuuuuuuuuu", "avatar_id"=>"1", "comment"=>{"content"=>"seriously love ur avi so much u stupid fucking bitch i hope u die i hate u so much balh balah baalfh aodhf fucccckkkkkkkkk fuuuuuuckkkk uuuuuuuuuuuuuu"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:36:in `set_avatar'
+[31mUnpermitted parameters: :avatar_id, :comment[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("content", "created_by", "avatar_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "seriously love ur avi so much u stupid fucking bitch i hope u die i hate u so much balh balah baalfh aodhf fucccckkkkkkkkk fuuuuuuckkkk uuuuuuuuuuuuuu"], ["created_by", "Corey"], ["avatar_id", 1], ["created_at", "2020-02-18 15:38:11.063460"], ["updated_at", "2020-02-18 15:38:11.063460"]]
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+Completed 201 Created in 9ms (Views: 0.4ms | ActiveRecord: 2.1ms | Allocations: 3748)
+
+
+Started PUT "/users/2" for ::1 at 2020-02-18 10:38:11 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"currency"=>306, "id"=>"2", "user"=>{"currency"=>306}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Corey"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "ferlandc@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "currency" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["currency", 306], ["updated_at", "2020-02-18 15:38:11.109062"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 5040)
+
+
+Started POST "/avatars/1/comments" for ::1 at 2020-02-18 10:38:13 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"content"=>"seriously love ur avi so much u stupid fucking bitch i hope u die i hate u so much balh balah baalfh aodhf fucccckkkkkkkkk fuuuuuuckkkk uuuuuuuuuuuuuu", "avatar_id"=>"1", "comment"=>{"content"=>"seriously love ur avi so much u stupid fucking bitch i hope u die i hate u so much balh balah baalfh aodhf fucccckkkkkkkkk fuuuuuuckkkk uuuuuuuuuuuuuu"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:36:in `set_avatar'
+[31mUnpermitted parameters: :avatar_id, :comment[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "created_by", "avatar_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "seriously love ur avi so much u stupid fucking bitch i hope u die i hate u so much balh balah baalfh aodhf fucccckkkkkkkkk fuuuuuuckkkk uuuuuuuuuuuuuu"], ["created_by", "Corey"], ["avatar_id", 1], ["created_at", "2020-02-18 15:38:13.186270"], ["updated_at", "2020-02-18 15:38:13.186270"]]
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+Completed 201 Created in 10ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 3749)
+
+
+Started PUT "/users/2" for ::1 at 2020-02-18 10:38:13 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"currency"=>402, "id"=>"2", "user"=>{"currency"=>402}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Corey"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "ferlandc@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "currency" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["currency", 402], ["updated_at", "2020-02-18 15:38:13.234699"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 5041)
+
+
+Started POST "/avatars/1/comments" for ::1 at 2020-02-18 10:38:15 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"content"=>"seriously love ur avi so much u stupid fucking bitch i hope u die i hate u so much balh balah baalfh aodhf fucccckkkkkkkkk fuuuuuuckkkk uuuuuuuuuuuuuu", "avatar_id"=>"1", "comment"=>{"content"=>"seriously love ur avi so much u stupid fucking bitch i hope u die i hate u so much balh balah baalfh aodhf fucccckkkkkkkkk fuuuuuuckkkk uuuuuuuuuuuuuu"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:36:in `set_avatar'
+[31mUnpermitted parameters: :avatar_id, :comment[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("content", "created_by", "avatar_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "seriously love ur avi so much u stupid fucking bitch i hope u die i hate u so much balh balah baalfh aodhf fucccckkkkkkkkk fuuuuuuckkkk uuuuuuuuuuuuuu"], ["created_by", "Corey"], ["avatar_id", 1], ["created_at", "2020-02-18 15:38:15.497840"], ["updated_at", "2020-02-18 15:38:15.497840"]]
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+Completed 201 Created in 9ms (Views: 0.6ms | ActiveRecord: 1.7ms | Allocations: 3748)
+
+
+Started PUT "/users/2" for ::1 at 2020-02-18 10:38:15 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"currency"=>550, "id"=>"2", "user"=>{"currency"=>550}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Corey"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "ferlandc@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "currency" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["currency", 550], ["updated_at", "2020-02-18 15:38:15.549449"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 2.2ms | Allocations: 5040)
+
+
+Started GET "/items" for ::1 at 2020-02-18 10:38:19 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 1563)
+
+
+Started PUT "/users/2" for ::1 at 2020-02-18 10:38:22 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"currency"=>200, "id"=>"2", "user"=>{"currency"=>200}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Corey"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "ferlandc@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "currency" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["currency", 200], ["updated_at", "2020-02-18 15:38:22.508619"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 5040)
+
+
+Started POST "/inventories" for ::1 at 2020-02-18 10:38:22 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"item_id"=>6, "inventory"=>{"item_id"=>6}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameter: :inventory[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[36mInventory Create (0.5ms)[0m  [1m[32mINSERT INTO "inventories" ("item_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["item_id", 6], ["user_id", 2], ["created_at", "2020-02-18 15:38:22.558511"], ["updated_at", "2020-02-18 15:38:22.558511"]]
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:4:in `create'
+Completed 201 Created in 18ms (Views: 0.5ms | ActiveRecord: 2.2ms | Allocations: 4708)
+
+
+Started GET "/inventories" for ::1 at 2020-02-18 10:38:24 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1557)
+
+
+Started GET "/items/6" for ::1 at 2020-02-18 10:38:24 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 688)
+
+
+Started PUT "/avatars/2" for ::1 at 2020-02-18 10:38:26 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"hair"=>"/images/hairstyles/bun_green.png", "id"=>"2", "avatar"=>{"hair"=>"/images/hairstyles/bun_green.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:20:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:20:in `update'
+  [1m[36mAvatar Update (0.4ms)[0m  [1m[33mUPDATE "avatars" SET "hair" = ?, "updated_at" = ? WHERE "avatars"."id" = ?[0m  [["hair", "/images/hairstyles/bun_green.png"], ["updated_at", "2020-02-18 15:38:26.825326"], ["id", 2]]
+  ↳ app/controllers/avatars_controller.rb:20:in `update'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:20:in `update'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 4366)
+
+
+Started GET "/avatars/2" for ::1 at 2020-02-18 10:38:26 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAvatar Load (0.3ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 720)
+
+
+Started GET "/items" for ::1 at 2020-02-18 10:38:32 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 1563)
+
+
+Started GET "/avatars" for ::1 at 2020-02-18 10:38:52 -0500
+Processing by AvatarsController#index as HTML
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 1082)
+
+
+Started GET "/users/Corey" for ::1 at 2020-02-18 10:39:02 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"Corey"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Corey"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 1304)
+
+
+Started GET "/avatars/2" for ::1 at 2020-02-18 10:39:02 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 720)
+
+
+Started GET "/avatars/2/comments" for ::1 at 2020-02-18 10:39:02 -0500
+Processing by CommentsController#index as HTML
+  Parameters: {"avatar_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.3ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:36:in `set_avatar'
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."avatar_id" = ?[0m  [["avatar_id", 2]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 10ms (Views: 3.7ms | ActiveRecord: 1.4ms | Allocations: 1929)
+
+
+Started GET "/avatars" for ::1 at 2020-02-18 10:39:05 -0500
+Processing by AvatarsController#index as HTML
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 1081)
+
+
+Started GET "/inventories" for ::1 at 2020-02-18 10:39:08 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1557)
+
+
+Started GET "/items/6" for ::1 at 2020-02-18 10:39:08 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 688)
+
+
+Started GET "/items" for ::1 at 2020-02-18 10:39:10 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 1562)
+
+
+Started GET "/inventories" for ::1 at 2020-02-18 10:39:24 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 1557)
+
+
+Started GET "/items/6" for ::1 at 2020-02-18 10:39:24 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:36:in `set_item'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 688)
+
+
+Started PUT "/avatars/2" for ::1 at 2020-02-18 10:39:29 -0500
+Processing by AvatarsController#update as HTML
+  Parameters: {"hair"=>"/images/hairstyles/bun_green.png", "id"=>"2", "avatar"=>{"hair"=>"/images/hairstyles/bun_green.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.3ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+[31mUnpermitted parameters: :id, :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:20:in `update'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 2435)
+
+
+Started GET "/avatars/2" for ::1 at 2020-02-18 10:39:29 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 720)
+
+
+Started GET "/avatars" for ::1 at 2020-02-18 10:39:33 -0500
+Processing by AvatarsController#index as HTML
+  [1m[36mAvatar Load (0.1ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 1081)
+
+
+Started GET "/items" for ::1 at 2020-02-18 10:39:36 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 1563)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 10:45:10 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"Admin", "email"=>"admin@admin.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Admin", "email"=>"admin@admin.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Admin"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "currency", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "Admin"], ["email", "admin@admin.com"], ["password_digest", "$2a$12$T3YCAr8SGAMZeAH4Oju1M.RBhv/rCf.sNoDZisFy6GL2qcCWDnwb6"], ["currency", 100], ["created_at", "2020-02-18 15:45:11.275343"], ["updated_at", "2020-02-18 15:45:11.275343"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+Completed 201 Created in 826ms (Views: 0.7ms | ActiveRecord: 4.9ms | Allocations: 6378)
+
+
+Started POST "/avatars" for ::1 at 2020-02-18 10:45:11 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameter: :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:11:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:11:in `create'
+  [1m[36mAvatar Create (0.4ms)[0m  [1m[32mINSERT INTO "avatars" ("base", "hair", "outfit", "user_id", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["base", "/images/bases/base_light.png"], ["hair", ""], ["outfit", "/images/outfits/casual_pink.png"], ["user_id", 3], ["created_at", "2020-02-18 15:45:11.843583"], ["updated_at", "2020-02-18 15:45:11.843583"], ["username", "Admin"]]
+  ↳ app/controllers/avatars_controller.rb:11:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:11:in `create'
+Completed 201 Created in 14ms (Views: 0.4ms | ActiveRecord: 2.2ms | Allocations: 3899)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 10:48:11 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"Test", "email"=>"test@test.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Test", "email"=>"test@test.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "currency", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "Test"], ["email", "test@test.com"], ["password_digest", "$2a$12$gCl6kJbbChmXTkSbVZiwAebMaTOSINwuBBfEWQjPkTE0NmZvGfdfm"], ["currency", 100], ["created_at", "2020-02-18 15:48:11.526630"], ["updated_at", "2020-02-18 15:48:11.526630"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+Completed 201 Created in 825ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 6641)
+
+
+Started POST "/avatars" for ::1 at 2020-02-18 10:48:12 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameter: :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:11:in `create'
+  [1m[36mAvatar Create (0.4ms)[0m  [1m[32mINSERT INTO "avatars" ("base", "hair", "outfit", "user_id", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["base", "/images/bases/base_light.png"], ["hair", ""], ["outfit", "/images/outfits/casual_pink.png"], ["user_id", 4], ["created_at", "2020-02-18 15:48:12.094015"], ["updated_at", "2020-02-18 15:48:12.094015"], ["username", "Test"]]
+  ↳ app/controllers/avatars_controller.rb:11:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:11:in `create'
+Completed 201 Created in 10ms (Views: 0.6ms | ActiveRecord: 1.4ms | Allocations: 3881)
+
+
+Started GET "/users/Test" for ::1 at 2020-02-18 10:49:03 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"Test"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 1323)
+
+
+Started GET "/avatars/4" for ::1 at 2020-02-18 10:49:04 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAvatar Load (0.4ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 740)
+
+
+Started GET "/avatars/4/comments" for ::1 at 2020-02-18 10:49:04 -0500
+Processing by CommentsController#index as HTML
+  Parameters: {"avatar_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.3ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:36:in `set_avatar'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."avatar_id" = ?[0m  [["avatar_id", 4]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 0.6ms | Allocations: 1946)
+
+
+Started POST "/signup" for ::1 at 2020-02-18 10:49:33 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"User", "email"=>"user@user.com", "password"=>"[FILTERED]", "user"=>{"username"=>"User", "email"=>"user@user.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "User"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user@user.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "currency", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "User"], ["email", "user@user.com"], ["password_digest", "$2a$12$I286LW7pnS9wqpdBu0VQkOYX2ynibKLm0zkV5HQoIM8riiU9uT00C"], ["currency", 100], ["created_at", "2020-02-18 15:49:33.635754"], ["updated_at", "2020-02-18 15:49:33.635754"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user@user.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user@user.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+Completed 201 Created in 819ms (Views: 0.4ms | ActiveRecord: 4.9ms | Allocations: 6122)
+
+
+Started POST "/avatars" for ::1 at 2020-02-18 10:49:34 -0500
+Processing by AvatarsController#create as HTML
+  Parameters: {"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png", "avatar"=>{"base"=>"/images/bases/base_light.png", "hair"=>"", "outfit"=>"/images/outfits/casual_pink.png"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameter: :avatar[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/avatars_controller.rb:11:in `create'
+  [1m[36mAvatar Create (0.5ms)[0m  [1m[32mINSERT INTO "avatars" ("base", "hair", "outfit", "user_id", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["base", "/images/bases/base_light.png"], ["hair", ""], ["outfit", "/images/outfits/casual_pink.png"], ["user_id", 5], ["created_at", "2020-02-18 15:49:34.197403"], ["updated_at", "2020-02-18 15:49:34.197403"], ["username", "User"]]
+  ↳ app/controllers/avatars_controller.rb:11:in `create'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/avatars_controller.rb:11:in `create'
+Completed 201 Created in 37ms (Views: 0.4ms | ActiveRecord: 2.4ms | Allocations: 8184)
+
+
+Started GET "/users/User" for ::1 at 2020-02-18 10:49:34 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"User"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "User"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 1304)
+
+
+Started GET "/avatars/5" for ::1 at 2020-02-18 10:49:34 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 728)
+
+
+Started GET "/avatars/5/comments" for ::1 at 2020-02-18 10:49:34 -0500
+Processing by CommentsController#index as HTML
+  Parameters: {"avatar_id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.2ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:36:in `set_avatar'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."avatar_id" = ?[0m  [["avatar_id", 5]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 0.7ms | Allocations: 1929)
+
+
+Started POST "/avatars/5/comments" for ::1 at 2020-02-18 10:50:11 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"content"=>"uh oh", "avatar_id"=>"5", "comment"=>{"content"=>"uh oh"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mAvatar Load (0.8ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:36:in `set_avatar'
+[31mUnpermitted parameters: :avatar_id, :comment[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("content", "created_by", "avatar_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "uh oh"], ["created_by", "User"], ["avatar_id", 5], ["created_at", "2020-02-18 15:50:11.058671"], ["updated_at", "2020-02-18 15:50:11.058671"]]
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+Completed 201 Created in 14ms (Views: 0.4ms | ActiveRecord: 3.2ms | Allocations: 3747)
+
+
+Started PUT "/users/null" for ::1 at 2020-02-18 10:50:11 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"currency"=>101, "id"=>"null", "user"=>{"currency"=>101}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "User"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "user@user.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "currency" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["currency", 101], ["updated_at", "2020-02-18 15:50:11.099839"], ["id", 5]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 5041)
+
+
+Started POST "/auth/login" for ::1 at 2020-02-18 11:04:15 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"cor@cor.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"cor@cor.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+Completed 401 Unauthorized in 275ms (Views: 1.5ms | ActiveRecord: 1.0ms | Allocations: 758)
+
+
+Started POST "/auth/login" for ::1 at 2020-02-18 11:05:39 -0500
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"cor@cor.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"cor@cor.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+Completed 401 Unauthorized in 321ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 737)
+
+
+Started POST "/auth/login" for ::1 at 2020-02-18 11:06:49 -0500
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"cor@cor.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"cor@cor.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+Completed 401 Unauthorized in 294ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 737)
+
+
+Started POST "/auth/login" for ::1 at 2020-02-18 11:07:03 -0500
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"cor@cor.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"cor@cor.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `authenticate'
+Completed 200 OK in 559ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 1875)
+
+
+Started GET "/avatars/1" for ::1 at 2020-02-18 11:07:03 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvatar Load (0.6ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.6ms | Allocations: 741)
+
+
+Started POST "/auth/login" for ::1 at 2020-02-18 11:10:20 -0500
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"cor@cor.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"cor@cor.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:16:in `user'
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cor@cor.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `authenticate'
+Completed 200 OK in 586ms (Views: 2.8ms | ActiveRecord: 1.4ms | Allocations: 1872)
+
+
+Started GET "/avatars/1" for ::1 at 2020-02-18 11:10:21 -0500
+Processing by AvatarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvatar Load (1.7ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+Completed 200 OK in 8ms (Views: 2.5ms | ActiveRecord: 1.7ms | Allocations: 720)
+
+
+Started GET "/users/cor" for ::1 at 2020-02-18 11:10:21 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"cor"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cor"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 11ms (Views: 0.8ms | ActiveRecord: 1.1ms | Allocations: 1342)
+
+
+Started GET "/avatars/1/comments" for ::1 at 2020-02-18 11:10:21 -0500
+Started GET "/avatars/1" for ::1 at 2020-02-18 11:10:21 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#index as HTML
+  Parameters: {"avatar_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Processing by AvatarsController#show as HTML
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  Parameters: {"id"=>"1"}
+  [1m[36mAvatar Load (0.3ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAvatar Load (0.3ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars" WHERE "avatars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:36:in `set_avatar'
+  ↳ app/controllers/avatars_controller.rb:32:in `set_avatar'
+Completed 200 OK in 13ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 1416)
+
+
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."avatar_id" = ?[0m  [["avatar_id", 1]]
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 26ms (Views: 15.7ms | ActiveRecord: 1.1ms | Allocations: 4336)
+
+
+Started GET "/avatars" for ::1 at 2020-02-18 11:10:53 -0500
+Processing by AvatarsController#index as HTML
+  [1m[36mAvatar Load (0.3ms)[0m  [1m[34mSELECT "avatars".* FROM "avatars"[0m
+  ↳ app/models/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 1591)
+
+
