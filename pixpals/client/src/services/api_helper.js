@@ -10,15 +10,22 @@ export const getUser = async (username) => {
 }
 
 export const loginUser = async (loginData) => {
-  const resp = await api.post('/auth/login', loginData);
-  console.log(resp);
-  api.defaults.headers.common.authorization = `Bearer ${resp.data.auth_token}`;
-  localStorage.setItem('authToken', resp.data.auth_token);
-  localStorage.setItem('userId', resp.data.user.id);
-  localStorage.setItem('username', resp.data.user.username);
-  localStorage.setItem('email', resp.data.user.email);
-  localStorage.setItem('currency', resp.data.user.currency);
-  return resp.data.user;
+  try {
+    const resp = await api.post('/auth/login', loginData);
+    console.log(resp);
+    api.defaults.headers.common.authorization = `Bearer ${resp.data.auth_token}`;
+    localStorage.setItem('authToken', resp.data.auth_token);
+    localStorage.setItem('userId', resp.data.user.id);
+    localStorage.setItem('username', resp.data.user.username);
+    localStorage.setItem('email', resp.data.user.email);
+    localStorage.setItem('currency', resp.data.user.currency);
+    return resp.data.user;
+  } catch (e) {
+    console.log(e.response);
+    if (e.response.status === 401) {
+      return {errorMessage: e.response.data.message}
+    }
+  }
 }
 
 export const registerUser = async (registerData) => {
@@ -34,7 +41,7 @@ export const registerUser = async (registerData) => {
   } catch(e) {
     console.log(e.response);
     if (e.response.status === 422) {
-      return {errorMessage: "Email is already associated with a user, please login to continue"}
+      return {errorMessage: e.response.data.message}
     }
   }
 }
