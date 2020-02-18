@@ -28,6 +28,7 @@ export default class Shop extends Component {
     } else {
       alert("You can't afford that item!");
     }
+    this.props.currencyRefresh();
   }
 
   render() {

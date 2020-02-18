@@ -23,7 +23,8 @@ class App extends Component {
       password: "",
       currentUser: null,
       currentAvatar: null,
-      errorText: ""
+      errorText: "",
+      currency: 0
     }
   }
 
@@ -53,7 +54,8 @@ class App extends Component {
   handleLogout = () => {
     this.setState({
       currentUser: null,
-      currentAvatar: null
+      currentAvatar: null,
+      currency: 0
     })
     localStorage.removeItem('authToken');
     localStorage.removeItem('userId');
@@ -76,6 +78,10 @@ class App extends Component {
     })
   }
 
+  currencyRefresh = () => {
+    this.setState({ currency: parseInt(localStorage.getItem('currency'))})
+  }
+
   componentDidMount() {
     verifyUser();
     if (localStorage.getItem('authToken')) {
@@ -88,7 +94,8 @@ class App extends Component {
       const avatar = { base, hair, outfit };
       user && this.setState({
         currentUser: user,
-        currentAvatar: avatar
+        currentAvatar: avatar,
+        currency: parseInt(localStorage.getItem('currency'))
       })
     }
   }
@@ -98,7 +105,7 @@ class App extends Component {
       <div className="App">
         {this.state.currentUser ?
           <div>
-            <Header currentUser={this.state.currentUser} currentAvatar={this.state.currentAvatar} />
+            <Header currency={this.state.currency} currentUser={this.state.currentUser} currentAvatar={this.state.currentAvatar} />
             <button className="logout" onClick={this.handleLogout}>Logout</button>
           </div>
           :
@@ -122,10 +129,10 @@ class App extends Component {
           />
         )} />
         <Route path="/shop" render={() => (
-          <Shop />
+          <Shop currencyRefresh={this.currencyRefresh} />
         )} />
         <Route path="/inventory" render={() => (
-          <Inventory avatarRefresh={this.avatarRefresh} />
+          <Inventory avatarRefresh={this.avatarRefresh} currencyRefresh={this.currencyRefresh} />
         )} />
         <Route path="/profile/:id" render={(props) => (
           <Profile profileId={props.match.params.id} />

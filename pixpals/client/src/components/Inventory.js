@@ -67,6 +67,7 @@ export default class Inventory extends Component {
         this.setState({ items: [...this.state.items, invItem] });
       })
     }
+    this.props.currencyRefresh();
   }
 
   render() {

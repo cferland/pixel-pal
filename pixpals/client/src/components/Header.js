@@ -8,20 +8,9 @@ export default class Header extends Component {
     super(props);
 
     this.state = {
-      currency: parseInt(localStorage.getItem('currency'))
+      
     }
   }
-
-  getCurrency() {
-    this.setState({
-      currency: parseInt(localStorage.getItem('currency'))
-    })
-  }
-
-  componentDidMount() {
-
-  }
-
 
   render() {
     return (
@@ -32,7 +21,7 @@ export default class Header extends Component {
           </div>
           <div className="stats">
             <Link to={`/profile/${this.props.currentUser.username}`}><h2>{this.props.currentUser.username}</h2></Link>
-            <h4>{this.state.currency} Pixels</h4>
+            <h4>{this.props.currency} Pixels</h4>
           </div>
         </div>
         <nav>
