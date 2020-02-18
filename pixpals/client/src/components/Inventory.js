@@ -77,8 +77,8 @@ export default class Inventory extends Component {
           <div className="inv-card" key={item.invId}>
             <img className="inv-item" src={item.image} alt={item.name} />
             <p>{item.name}</p>
-            <button onClick={(e) => this.equipItem(e, item)}>Equip</button>
-            <button onClick={(e) => this.sellItem(e, item)}>Sell</button>
+            <button className="equip" onClick={(e) => this.equipItem(e, item)}>Equip</button>
+            <button className="sell" onClick={(e) => this.sellItem(e, item)}>Sell</button>
           </div>
         ))}
       </div>

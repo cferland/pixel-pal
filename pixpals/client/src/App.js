@@ -32,8 +32,9 @@ class App extends Component {
     e.preventDefault();
     const currentUser = await registerUser(registerData);
     if (!currentUser.errorMessage) {
-      const currentAvatar = await postAvatar({ base: "/images/bases/base_light.png", hair: "", outfit: "/images/outfits/casual_pink.png" });
+      const currentAvatar = await postAvatar({ base: "/images/bases/base_light.png", hair: "", outfit: "/images/outfits/underwear_grey.png" });
       this.setState({ currentUser, currentAvatar });
+      this.currencyRefresh();
     } else {
       this.setState({ errorText: currentUser.errorMessage })
     }
@@ -46,6 +47,7 @@ class App extends Component {
       console.log(currentUser)
       const currentAvatar = await loadAvatar(currentUser.id);
       this.setState({ currentUser, currentAvatar });
+      this.currencyRefresh();
     } else {
       this.setState({ errorText: currentUser.errorMessage })
     }
@@ -135,7 +137,7 @@ class App extends Component {
           <Inventory avatarRefresh={this.avatarRefresh} currencyRefresh={this.currencyRefresh} />
         )} />
         <Route path="/profile/:id" render={(props) => (
-          <Profile profileId={props.match.params.id} />
+          <Profile profileId={props.match.params.id} currencyRefresh={this.currencyRefresh} />
         )} />
         <Route path="/gallery" render={() => (
           <Gallery />

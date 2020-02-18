@@ -16,9 +16,10 @@ export default class Comment extends Component {
 
   render() {
     return (
-      <form onSubmit={(e) => {
+      <form className="comment" onSubmit={(e) => {
         e.preventDefault();
-        this.props.createComment(this.state)
+        this.props.createComment(this.state);
+        this.setState({ content: '' });
       }}>
         <input
           type="text"

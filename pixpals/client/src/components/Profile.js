@@ -24,6 +24,7 @@ export default class Profile extends Component {
     const avId = avatar.id;
     const currentAvatar = { base, hair, outfit, avId }
     this.setState({ currentAvatar })
+    console.log(this.state.currentAvatar)
   }
 
   getComments = async (id) => {
@@ -45,6 +46,7 @@ export default class Profile extends Component {
     this.setState({
       comments: [...this.state.comments, newComment]
     })
+    this.props.currencyRefresh();
   }
 
   deleteComment = async (e, avId, commentId) => {
@@ -87,7 +89,7 @@ export default class Profile extends Component {
             <div key={comment.id}>
               <h4><Link to={`/profile/${comment.created_by}`}>{comment.created_by}</Link></h4>
               <p>{comment.content}</p>
-              {comment.created_by === localStorage.getItem('username') || this.state.currentAvatar.avId === localStorage.getItem('userId') ?
+              {comment.created_by === localStorage.getItem('username') || this.state.currentAvatar.avId === parseInt(localStorage.getItem('userId')) ?
                 (
                   <button onClick={(e) => this.deleteComment(e, this.state.currentAvatar.avId, comment.id)}>
                     Delete

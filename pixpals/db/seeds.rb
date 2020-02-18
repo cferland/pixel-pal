@@ -8,12 +8,22 @@
 
 items = Item.create(
   [
-    {name: 'Wizard Robe', cost: 1000, image: '/images/outfits/robe_green.png' }, 
-    {name: 'Casual Outfit', cost: 150, image: '/images/outfits/casual_pink.png' }, 
+    {name: 'Undergarments', cost: 10, image: '/images/outfits/underwear_grey.png'},
+    {name: 'Wizard Robe', cost: 800, image: '/images/outfits/robe_green.png' },
+    {name: 'Casual Outfit', cost: 150, image: '/images/outfits/casual_pink.png' },
+    {name: 'Hitchhiker Boots', cost: 230, image: '/images/outfits/hitchhiker.png'},
     {name: 'Modern Vampire', cost: 500, image: '/images/outfits/vamp_purple.png'},
-    {name: 'Pippy Longstocking', cost: 900, image: '/images/hairstyles/pippy_red.png'},
+    {name: 'Hollywood Dress', cost: 1000, image: '/images/outfits/dress_red.png'},
+    {name: 'Pippy Longstocking', cost: 860, image: '/images/hairstyles/pippy_red.png'},
     {name: 'Buzzcut', cost: 50, image: '/images/hairstyles/buzz_yellow.png'},
-    {name: 'Low Bun', cost: 350, image: '/images/hairstyles/bun_green.png'}
+    {name: 'Low Bun', cost: 350, image: '/images/hairstyles/bun_green.png'},
+    {name: 'Ocean Waves', cost: 700, image: '/images/hairstyles/wavy_blue.png'},
+    {name: 'Cowboy Hat', cost: 420, image: '/images/hairstyles/cowboy_hat.png'},
+    {name: 'Light Skin', cost: 30, image: '/images/bases/base_light.png'},
+    {name: 'Dark Skin', cost: 30, image: '/images/bases/base_dark.png'},
+    {name: 'Alien', cost: 300, image: '/images/bases/base_alien.png'},
+    {name: 'Undine', cost: 500, image: '/images/bases/base_undine.png'},
+    {name: 'Drow', cost: 100, image: '/images/bases/base_grey.png'}
   ]
 )
 

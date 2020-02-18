@@ -28,6 +28,6 @@ class UsersController < ApplicationController
         :password,
         :password_confirmation,
         :currency)
-        .with_defaults(currency: 100)
+        .with_defaults(currency: 1000)
   end
 end
