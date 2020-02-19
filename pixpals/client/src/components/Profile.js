@@ -58,8 +58,8 @@ export default class Profile extends Component {
   componentDidMount = async () => {
     verifyUser();
     const profileId = await getUser(this.props.profileId);
-    this.setAvatar(profileId);
-    this.getComments(profileId);
+    await this.setAvatar(profileId);
+    await this.getComments(profileId);
   }
 
   componentDidUpdate = async (prevProps) => {
@@ -91,14 +91,16 @@ export default class Profile extends Component {
               <p>{comment.content}</p>
               {comment.created_by === localStorage.getItem('username') || this.state.currentAvatar.avId === parseInt(localStorage.getItem('userId')) ?
                 (
-                  <button onClick={(e) => this.deleteComment(e, this.state.currentAvatar.avId, comment.id)}>
+                  <button className="sell" onClick={(e) => this.deleteComment(e, this.state.currentAvatar.avId, comment.id)}>
                     Delete
                   </button>
                 ) : ''}
             </div>
           ))}
           <div>
-            <Comment createComment={this.createComment} />
+            {this.props.currentUser &&
+              <Comment createComment={this.createComment} />
+            }
           </div>
         </div>
       </div>

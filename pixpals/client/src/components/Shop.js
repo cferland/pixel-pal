@@ -18,6 +18,7 @@ export default class Shop extends Component {
 
   buyItem = async (e, item) => {
     e.preventDefault();
+    await this.setState({ currency: parseInt(localStorage.getItem('currency')) });
     if (this.state.currency - item.cost >= 0) {
       let currency = this.state.currency;
       currency = currency - item.cost;
@@ -25,6 +26,7 @@ export default class Shop extends Component {
       const userId = localStorage.getItem('userId');
       await setCurrency(userId, currency);
       await addInventory({ item_id: item.id });
+      alert("Purchase successful!");
     } else {
       alert("You can't afford that item!");
     }

@@ -107,7 +107,7 @@ class App extends Component {
       <div className="App">
         {this.state.currentUser ?
           <div>
-            <Header currency={this.state.currency} currentUser={this.state.currentUser} currentAvatar={this.state.currentAvatar} />
+            <Header currency={this.state.currency} currencyRefresh={this.currencyRefresh} currentUser={this.state.currentUser} currentAvatar={this.state.currentAvatar} />
             <button className="logout" onClick={this.handleLogout}>Logout</button>
           </div>
           :
@@ -137,7 +137,7 @@ class App extends Component {
           <Inventory avatarRefresh={this.avatarRefresh} currencyRefresh={this.currencyRefresh} />
         )} />
         <Route path="/profile/:id" render={(props) => (
-          <Profile profileId={props.match.params.id} currencyRefresh={this.currencyRefresh} />
+          <Profile currentUser={this.state.currentUser} profileId={props.match.params.id} currencyRefresh={this.currencyRefresh} />
         )} />
         <Route path="/gallery" render={() => (
           <Gallery />

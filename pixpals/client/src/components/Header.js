@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import { setCurrency } from '../services/api_helper';
+
 import Avatar from './Avatar';
 
 export default class Header extends Component {
@@ -8,8 +10,17 @@ export default class Header extends Component {
     super(props);
 
     this.state = {
-      
+      moneybag: null
     }
+  }
+
+  findPixels = async () => {
+    let amount = Math.floor(Math.random() * (500 - 1 + 1)) + 1;
+    const currency = this.props.currency + amount;
+    const userId = localStorage.getItem('userId');
+    alert(`You found ${amount} Pixels!`);
+    await setCurrency(userId, currency);
+    await this.props.currencyRefresh();
   }
 
   render() {
@@ -21,7 +32,7 @@ export default class Header extends Component {
           </div>
           <div className="stats">
             <Link to={`/profile/${this.props.currentUser.username}`}><h2>{this.props.currentUser.username}</h2></Link>
-            <h4>{this.props.currency} Pixels</h4>
+            <h4 onClick={this.findPixels}>{this.props.currency} Pixels</h4>
           </div>
         </div>
         <nav>

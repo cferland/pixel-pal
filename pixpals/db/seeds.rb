@@ -14,7 +14,7 @@ items = Item.create(
     {name: 'Hitchhiker Boots', cost: 230, image: '/images/outfits/hitchhiker.png'},
     {name: 'Modern Vampire', cost: 500, image: '/images/outfits/vamp_purple.png'},
     {name: 'Hollywood Dress', cost: 1000, image: '/images/outfits/dress_red.png'},
-    {name: 'Kill Bill', cost: 940, image: '/images/outfits/kill_bill.png'},
+    {name: 'Beatrix Kiddo', cost: 940, image: '/images/outfits/kill_bill.png'},
     {name: 'Pippy Longstocking', cost: 860, image: '/images/hairstyles/pippy_red.png'},
     {name: 'Buzzcut', cost: 50, image: '/images/hairstyles/buzz_yellow.png'},
     {name: 'Low Bun', cost: 350, image: '/images/hairstyles/bun_green.png'},
