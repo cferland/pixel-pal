@@ -10,7 +10,7 @@ export default class Header extends Component {
     super(props);
 
     this.state = {
-      moneybag: null
+      moneybag: false
     }
   }
 
@@ -21,6 +21,20 @@ export default class Header extends Component {
     alert(`You found ${amount} Pixels!`);
     await setCurrency(userId, currency);
     await this.props.currencyRefresh();
+    this.setState({ moneybag: false });
+  }
+
+  generatePixels = () => {
+    let randomize = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+    if (randomize > 5) {
+      this.setState({moneybag: true})
+    } else {
+      this.setState({moneybag: false})
+    }
+  }
+
+  componentDidMount() {
+    this.setState({ moneybag: false})
   }
 
   render() {
@@ -32,13 +46,14 @@ export default class Header extends Component {
           </div>
           <div className="stats">
             <Link to={`/profile/${this.props.currentUser.username}`}><h2>{this.props.currentUser.username}</h2></Link>
-            <h4 onClick={this.findPixels}>{this.props.currency} Pixels</h4>
+            <h4>{this.props.currency} Pixels</h4>
+            {this.state.moneybag && <div className="moneybag" onClick={this.findPixels}><img src="/images/moneybag.png" alt="moneybag" /></div>}
           </div>
         </div>
         <nav>
-          <div><Link to="/gallery">Gallery</Link></div>
-          <div><Link to="/shop">Shop</Link></div>
-          <div><Link to="/inventory">Inventory</Link></div>
+          <div onClick={this.generatePixels}><Link to="/gallery">Gallery</Link></div>
+          <div onClick={this.generatePixels}><Link to="/shop">Shop</Link></div>
+          <div onClick={this.generatePixels}><Link to="/inventory">Inventory</Link></div>
         </nav>
       </header>
     )
