@@ -26,7 +26,6 @@ export default class Inventory extends Component {
   equipItem = async (e, item) => {
     e.preventDefault();
     const avatarId = localStorage.getItem('avatar_id');
-    console.log(item);
     if (item.image.search('/outfits/') !== -1) {
       const itemData = { outfit: item.image }
       await putAvatar(avatarId, itemData);

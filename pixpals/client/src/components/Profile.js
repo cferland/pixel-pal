@@ -39,7 +39,6 @@ export default class Profile extends Component {
     let addAmount = Math.floor(Math.random() * (length - 1 + 1)) + 1;
     console.log(addAmount);
     currency = currency + addAmount;
-    console.log(currency);
     this.setState({ currency });
     const userId = localStorage.getItem('userId');
     await setCurrency(userId, currency);
@@ -66,7 +65,6 @@ export default class Profile extends Component {
     if (prevProps.profileId !== this.props.profileId) {
       verifyUser();
       const profileId = await getUser(this.props.profileId);
-      console.log(profileId)
       this.setAvatar(profileId);
       this.getComments(profileId);
     }
