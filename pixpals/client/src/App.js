@@ -44,7 +44,6 @@ class App extends Component {
     e.preventDefault();
     const currentUser = await loginUser(loginData);
     if (!currentUser.errorMessage) {
-      console.log(currentUser)
       const currentAvatar = await loadAvatar(currentUser.id);
       this.setState({ currentUser, currentAvatar });
       this.currencyRefresh();

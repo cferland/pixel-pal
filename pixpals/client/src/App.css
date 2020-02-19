@@ -352,3 +352,17 @@ nav.container {
 .comment button:hover {
   background-color: #00c8ff;
 }
+
+.moneybag {
+  position: absolute;
+  top: 90px;
+  right: 30px;
+}
+
+.moneybag img {
+  width: 100px;
+}
+
+.moneybag:hover {
+  cursor: pointer;
+}
