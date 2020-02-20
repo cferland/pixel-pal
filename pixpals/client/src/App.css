@@ -233,12 +233,26 @@ button:active {
 
 .landing {
   width: 80%;
-  margin: 0 auto;
+  margin: 60px auto;
   font-size: 18px;
+  line-height: 30px;
 }
 
 .landing h1 {
   text-align: center;
+  margin-bottom: 30px;
+}
+
+.pixel {
+  color: #00c8ff;
+}
+
+.exclamation {
+  color: #ff334e;
+}
+
+.pals {
+  color: #94DB00;
 }
 
 .logout {

@@ -143,7 +143,7 @@ class App extends Component {
         )} />
         <Route exact path="/" render={() => (
           <div className="landing">
-            <h1>Welcome to Pixel Pals!</h1>
+            <h1>Welcome to <span className="pixel">Pixel</span> <span className="pals">Pals</span><span className="exclamation">!</span></h1>
             <p>
               Pixel Pals is an online social network where each user has their own avatar, 
               or "Pixel Pal", which can be customized with various items.
