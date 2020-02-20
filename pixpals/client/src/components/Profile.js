@@ -24,7 +24,6 @@ export default class Profile extends Component {
     const avId = avatar.id;
     const currentAvatar = { base, hair, outfit, avId }
     this.setState({ currentAvatar })
-    console.log(this.state.currentAvatar)
   }
 
   getComments = async (id) => {
@@ -37,7 +36,6 @@ export default class Profile extends Component {
     let currency = this.state.currency;
     let length = content.content.length;
     let addAmount = Math.floor(Math.random() * (length - 1 + 1)) + 1;
-    console.log(addAmount);
     currency = currency + addAmount;
     this.setState({ currency });
     const userId = localStorage.getItem('userId');
