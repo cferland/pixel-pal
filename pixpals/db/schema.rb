@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2020_02_15_132546) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "avatars", force: :cascade do |t|
     t.string "base"
     t.string "hair"
     t.string "outfit"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
@@ -26,15 +29,15 @@ ActiveRecord::Schema.define(version: 2020_02_15_132546) do
   create_table "comments", force: :cascade do |t|
     t.string "content"
     t.string "created_by"
-    t.integer "avatar_id", null: false
+    t.bigint "avatar_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["avatar_id"], name: "index_comments_on_avatar_id"
   end
 
   create_table "inventories", force: :cascade do |t|
-    t.integer "item_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "item_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["item_id"], name: "index_inventories_on_item_id"
