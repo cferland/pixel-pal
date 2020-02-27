@@ -1,4 +1,4 @@
-# Pixel Pals
+# Pixel Pals ([Live Site](http://pixel-pals.s3-website-us-east-1.amazonaws.com/))
 
 ![Avatar](wireframes/sample1.png)
 
